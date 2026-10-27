@@ -1,0 +1,219 @@
+html {
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    position: relative;
+    min-height: 100%;
+    margin: 0;
+    background: linear-gradient(180deg, #242625 0%, #1e201f 50%, #242625 100%);
+    background-attachment: fixed;
+    color: #a4a8a4;
+    font-size: 1rem;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: #00acc1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+    color: #00d9f4;
+    text-decoration: underline;
+}
+
+strong {
+    font-weight: 600;
+    color: #00acc1;
+}
+
+em {
+    color: #e5e5e5;
+    font-style: normal;
+}
+
+.container {
+    max-width: 58rem;
+    margin: 0 auto;
+    padding: 1.5rem 1rem 3rem;
+    width: 100%;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+}
+
+.content .header {
+    padding: 3rem 1rem 1.5rem;
+    text-align: center;
+}
+
+.content .header img {
+    max-width: 220px;
+    height: auto;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+}
+
+.content .header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0.5rem 0 0;
+    line-height: 1.3;
+}
+
+.content .main {
+    position: relative;
+    margin: 1.5rem auto;
+    background: #1e201f;
+    border-radius: 0.85rem;
+    padding: 2.25rem 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.content .main .bookmark-banner {
+    background: #141615;
+    border-left: 4px solid #00acc1;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    color: #c5cac5;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.content .main ul.m-list {
+    margin: 1.5rem 0 2.5rem;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.content .main ul.m-list li.bntl {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #242625;
+    padding: 1rem 1.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid #363938;
+    color: #e5e5e5;
+    font-weight: 600;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    transition: all 0.25s ease;
+    text-align: left;
+}
+
+.content .main ul.m-list li.bntl:hover {
+    background: #003a42;
+    border-color: #00acc1;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 172, 193, 0.25);
+}
+
+.content .main ul.m-list li.bntl span.live-badge {
+    display: inline-flex;
+    align-items: center;
+    color: #ff334b;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(255, 51, 75, 0.12);
+    padding: 0.35rem 0.75rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(255, 51, 75, 0.3);
+}
+
+.content .main ul.m-list li.bntl span.live-badge:before {
+    content: "";
+    display: inline-block;
+    background: #ff334b;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    margin-right: 0.45rem;
+    box-shadow: 0 0 8px #ff334b;
+    animation: livePulse 1.5s infinite ease-in-out;
+}
+
+@keyframes livePulse {
+    0% { transform: scale(0.9); opacity: 0.7; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+.content .main .Body {
+    margin-top: 2rem;
+    border-top: 1px solid #2d302f;
+    padding-top: 2rem;
+}
+
+.content .main .Body section {
+    margin-bottom: 2.5rem;
+}
+
+h1, h2, h3 {
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+h2 {
+    color: #ffffff;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #2d302f;
+    padding-bottom: 0.5rem;
+    margin: 2rem 0 1rem;
+}
+
+h3 {
+    color: #00acc1;
+    font-size: 1.15rem;
+    margin: 1.25rem 0 0.5rem;
+}
+
+p {
+    line-height: 1.65;
+    margin-bottom: 1rem;
+    color: #a4a8a4;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #6d726d;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem 0.75rem;
+    }
+    .content .main {
+        padding: 1.5rem 1rem;
+    }
+    .content .header h1 {
+        font-size: 1.25rem;
+    }
+    .content .main ul.m-list li.bntl {
+        padding: 0.85rem 1rem;
+        font-size: 0.95rem;
+    }
+}

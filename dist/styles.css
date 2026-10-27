@@ -1,0 +1,2564 @@
+/* ==========================================================================
+   STREAMKING SIGNATURE DARK-RED DESIGN SYSTEM
+   Modern, Sleek, High-Performance Sports Streaming Theme
+   ========================================================================== */
+
+:root {
+  /* StreamKing Signature Palette */
+  --bg-main: #0b0e14;
+  --bg-header: #0f131c;
+  --bg-card: #131825;
+  --bg-card-hover: #192033;
+  --bg-card-active: #1e263d;
+  --bg-card-glass: rgba(19, 24, 37, 0.85);
+  --bg-input: #0a0d14;
+
+  --border-card: #20283c;
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-highlight: rgba(216, 31, 38, 0.35);
+
+  /* Primary Brand Red (StreamKing Red) */
+  --brand-red: #d81f26;
+  --brand-red-hover: #ef232b;
+  --brand-red-glow: rgba(216, 31, 38, 0.3);
+  --brand-red-subtle: rgba(216, 31, 38, 0.12);
+
+  /* Accents & Status */
+  --accent-gold: #fbbf24;
+  --accent-gold-glow: rgba(251, 191, 36, 0.25);
+  --accent-live: #ef4444;
+  --accent-green: #10b981;
+  --accent-blue: #38bdf8;
+  --discord-blurple: #5865f2;
+  --discord-hover: #4752c4;
+
+  /* Typography Colors */
+  --text-white: #ffffff;
+  --text-light: #e5e7eb;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  /* Geometry & Radius */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Fonts */
+  --font-main: 'Poppins', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.65);
+  --shadow-red: 0 4px 20px rgba(216, 31, 38, 0.35);
+
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-main);
+  color: var(--text-light);
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+  padding-bottom: 70px;
+  background-image: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(216, 31, 38, 0.12), transparent),
+    radial-gradient(circle at 100% 20%, rgba(56, 189, 248, 0.03), transparent);
+  background-attachment: fixed;
+}
+
+@media (min-width: 769px) {
+  body {
+    padding-bottom: 30px;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Instant-paint rules for subpage reload resilience */
+html.subpage-active #categories-grid-section,
+html.subpage-active #top-hero-card {
+  display: none !important;
+}
+
+html.category-active #category-matches-view {
+  display: block !important;
+}
+
+html.player-active #player-theater-section {
+  display: block !important;
+}
+
+html.player-active #desktop-category-nav {
+  display: none !important;
+}
+
+/* User Requested: Hide navbar on player page for desktop version only */
+@media (min-width: 769px) {
+  html.player-active .site-header {
+    display: none !important;
+  }
+  html.player-active .player-theater-section {
+    margin-top: 18px;
+  }
+}
+
+/* ==========================================================================
+   SITE HEADER (StreamKing Style)
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(15, 19, 28, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: var(--transition);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  gap: 16px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* StreamKing Brand Logo with Red Mark */
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text-white);
+  transition: var(--transition);
+  user-select: none;
+}
+
+.brand-name {
+  color: var(--text-white);
+}
+
+.brand-mark {
+  background: var(--brand-red);
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  margin-left: 3px;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  box-shadow: 0 2px 10px var(--brand-red-glow);
+}
+
+.brand-logo:hover {
+  transform: scale(1.02);
+}
+
+/* Desktop Navigation Menu (StreamKing Sports Links) */
+.desktop-nav {
+  display: none;
+  align-items: center;
+  gap: 6px;
+}
+
+@media (min-width: 992px) {
+  .desktop-nav {
+    display: flex;
+  }
+}
+
+.nav-category-link {
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.nav-category-link:hover,
+.nav-category-link.active {
+  color: var(--text-white);
+  background: var(--bg-card-hover);
+}
+
+.nav-category-link.active {
+  color: var(--text-white);
+  background: var(--brand-red-subtle);
+  border: 1px solid var(--brand-red);
+}
+
+/* Header Right - Live Badge */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-full);
+}
+
+.live-pulse-radar {
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
+
+.pulse-core {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 8px;
+  height: 8px;
+  background: var(--brand-red);
+  border-radius: 50%;
+}
+
+.pulse-ring {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--brand-red);
+  border-radius: 50%;
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.header-live-text {
+  font-size: 11px;
+  font-weight: 800;
+  color: #ff6b6b;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  color: var(--text-white);
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .mobile-menu-toggle {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   MOBILE NAV DRAWER
+   ========================================================================== */
+.mobile-drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+  z-index: 998;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-slow);
+}
+
+.mobile-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-nav-drawer {
+  position: fixed;
+  top: 0;
+  left: -320px;
+  width: 300px;
+  height: 100%;
+  background: var(--bg-header);
+  border-right: 1px solid var(--border-card);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+
+.mobile-nav-drawer.active {
+  transform: translateX(320px);
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.close-drawer-btn {
+  font-size: 26px;
+  color: var(--text-muted);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawer-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.drawer-discord-box {
+  background: rgba(88, 101, 242, 0.12);
+  border: 1px solid rgba(88, 101, 242, 0.3);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+}
+
+.drawer-box-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.drawer-discord-box p {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.btn-discord-drawer {
+  display: block;
+  background: var(--discord-blurple);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.btn-discord-drawer:hover {
+  background: var(--discord-hover);
+}
+
+.drawer-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-dim);
+}
+
+.drawer-sports-list,
+.drawer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.drawer-sport-item,
+.drawer-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  color: var(--text-light);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+  transition: var(--transition);
+}
+
+.drawer-sport-item:hover,
+.drawer-action-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--brand-red);
+  color: var(--text-white);
+}
+
+/* ==========================================================================
+   STREAMKING HERO SECTION
+   ========================================================================== */
+.streamking-hero-card {
+  margin-top: 24px;
+  padding: 28px 24px;
+  background: linear-gradient(145deg, #161c2c 0%, #101420 100%);
+  border: 1px solid var(--border-card);
+  border-left: 4px solid var(--brand-red);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.streamking-hero-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(216, 31, 38, 0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-white);
+  line-height: 1.3;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 28px;
+  }
+}
+
+.hero-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+/* ==========================================================================
+   SAVE / BOOKMARK STRIP (StreamKing Style)
+   ========================================================================== */
+.save-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 12px 18px;
+  background: #111520;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.save-strip-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.save-strip-icon {
+  font-size: 18px;
+  color: var(--accent-gold);
+}
+
+.save-strip-text {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.save-strip-text b {
+  color: var(--text-white);
+  font-weight: 700;
+}
+
+.save-strip-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  color: var(--text-light);
+  font-size: 12px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.save-strip-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+}
+
+/* ==========================================================================
+   DISCORD BANNER (StreamKing Style)
+   ========================================================================== */
+.promo-banner--discord {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 14px;
+  padding: 14px 20px;
+  background: linear-gradient(90deg, rgba(88, 101, 242, 0.15) 0%, rgba(19, 24, 37, 0.95) 100%);
+  border: 1px solid rgba(88, 101, 242, 0.35);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 15px rgba(88, 101, 242, 0.08);
+}
+
+.promo-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.promo-banner-icon {
+  color: #7289da;
+  flex-shrink: 0;
+}
+
+.promo-banner-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.promo-banner-sub {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+@media (max-width: 640px) {
+  .promo-banner-sub {
+    display: none;
+  }
+}
+
+.promo-banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: var(--discord-blurple);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  box-shadow: 0 2px 10px rgba(88, 101, 242, 0.3);
+}
+
+.promo-banner-btn:hover {
+  background: var(--discord-hover);
+  transform: translateY(-1px);
+}
+
+/* Leaderboard Ad Banner Wrapper */
+.top-ad-banner-wrapper {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ==========================================================================
+   BROWSE SPORTS CATEGORIES GRID (EXACT STREAMKING SCREENSHOT CARDS)
+   White Cards, 3 Columns on Desktop, Black Titles, Red Subtitles, Slate Desc
+   ========================================================================== */
+.categories-grid-section {
+  margin-top: 28px;
+}
+
+.section-title-wrapper {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-white);
+  letter-spacing: -0.3px;
+}
+
+.section-title-icon {
+  font-size: 22px;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* 3-Column Grid on Desktop matching Screenshot */
+.sports-categories-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .sports-categories-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sports-categories-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+}
+
+/* PURE WHITE CARD AS IN USER SCREENSHOT */
+.sport-box-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff !important; /* Pure White Card from Screenshot */
+  border: 2px solid transparent !important; /* Stable layout */
+  border-radius: 14px;
+  padding: 18px 18px 16px 18px;
+  transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+}
+
+.sport-box-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand-red) !important;
+  box-shadow: 0 0 20px rgba(216, 31, 38, 0.45), 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+}
+
+.sport-box-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding-right: 18px; /* space for top right chevron */
+  flex: 1;
+}
+
+/* Sport Logo Container (Light Gray Rounded Box in Screenshot) */
+.sport-box-icon-wrap {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2f6; /* Light gray box from Screenshot */
+  border-radius: 10px;
+  padding: 7px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.sport-box-icon-wrap svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sport-box-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.sport-box-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+/* Bold Black Title from Screenshot */
+.sport-box-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #0f172a; /* Dark Black/Navy from Screenshot */
+  letter-spacing: -0.4px;
+  line-height: 1.2;
+}
+
+/* Bold Red Subtitle from Screenshot */
+.sport-box-subtitle {
+  font-size: 11px;
+  font-weight: 800;
+  color: #d81f26; /* Vibrant StreamKing Red from Screenshot */
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.35;
+  margin-top: 3px;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Slate Gray Description from Screenshot */
+.sport-box-desc {
+  font-size: 12px;
+  color: #475569; /* Slate Gray from Screenshot */
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Theme-matching Watch Stream Button under each sport card */
+.sport-box-btn-wrap {
+  margin-top: 14px;
+  width: 100%;
+}
+
+.sport-box-watch-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 18px;
+  background: #0f172a; /* Sleek theme dark matching website */
+  color: #ffffff !important;
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  border-radius: 10px;
+  border: 1px solid #1e293b;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.15);
+  transition: all 0.22s ease;
+  user-select: none;
+}
+
+.sport-box-card:hover .sport-box-watch-btn {
+  background: #1e293b;
+  border-color: #d81f26;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(216, 31, 38, 0.28);
+  transform: translateY(-1px);
+}
+
+.sport-box-watch-btn svg {
+  flex-shrink: 0;
+  color: #d81f26; /* Signature Red Play Icon */
+  transition: transform 0.2s ease;
+}
+
+.sport-box-card:hover .sport-box-watch-btn svg {
+  transform: scale(1.15) translateX(2px);
+}
+
+/* Top-right Red Chevron Arrow - Only visible on hover matching streamking.cx */
+.sport-box-arrow {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  color: #d81f26;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.sport-box-card:hover .sport-box-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ==========================================================================
+   CATEGORY MATCHES VIEW (When user opens a Box / Category)
+   ========================================================================== */
+.category-matches-view {
+  margin-top: 24px;
+}
+
+/* Category View Navigation / Breadcrumbs */
+.category-view-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.btn-back-categories {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  color: var(--text-light);
+  font-size: 13px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-back-categories:hover {
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  color: #ffffff;
+  transform: translateX(-3px);
+  box-shadow: 0 4px 15px var(--brand-red-glow);
+}
+
+/* Category Hero Banner */
+.category-hero-banner {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 22px;
+  background: linear-gradient(135deg, #182033 0%, #101422 100%);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.category-banner-logo {
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 13, 20, 0.8);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px;
+}
+
+.category-banner-logo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.category-banner-text h1,
+.category-banner-text h2 {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-white);
+  letter-spacing: -0.4px;
+  margin-bottom: 4px;
+}
+
+.category-banner-text p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 750px;
+}
+
+/* Category Search & Filter Controls */
+.category-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.category-search-box {
+  position: relative;
+  flex: 1;
+  max-width: 380px;
+  min-width: 240px;
+}
+
+.category-search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+  pointer-events: none;
+}
+
+.category-search-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 38px 0 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  color: var(--text-white);
+  font-size: 13px;
+  transition: var(--transition);
+}
+
+.category-search-input:focus {
+  border-color: var(--brand-red);
+  background: var(--bg-card-hover);
+  box-shadow: 0 0 0 3px var(--brand-red-subtle);
+}
+
+.category-search-clear {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.category-filter-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cat-filter-btn {
+  padding: 7px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.cat-filter-btn:hover,
+.cat-filter-btn.active {
+  color: var(--text-white);
+  background: var(--bg-card-hover);
+}
+
+.cat-filter-btn.active {
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  box-shadow: 0 2px 10px var(--brand-red-glow);
+}
+
+/* ==========================================================================
+   MATCH CARDS IN CATEGORY VIEW (StreamKing Style)
+   ========================================================================== */
+.category-streamking-title-wrap {
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+.category-streamking-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  letter-spacing: -0.3px;
+}
+
+.category-streamking-line {
+  height: 3px;
+  background: var(--brand-red);
+  width: 100%;
+  border-radius: 2px;
+}
+
+.category-matches-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* MATCH CARDS (Dark Theme matching user's latest screenshot) */
+.match-item-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 16px 20px;
+  background: var(--bg-card) !important; /* Sleek dark card from latest screenshot */
+  border: 1px solid var(--border-card) !important;
+  border-radius: 12px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 12px;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
+}
+
+.match-item-card:hover {
+  background: var(--bg-card-hover) !important;
+  border-color: var(--brand-red) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(216, 31, 38, 0.35), 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.match-card-main-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+}
+
+.match-item-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Rounded Box for League Logo from Screenshot */
+.match-league-thumb {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0d14 !important;
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.match-league-thumb svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.match-info-block {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Bold White Title from Screenshot */
+.match-title-h3 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff !important;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.2px;
+}
+
+.match-meta-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+}
+
+/* Muted League Tag */
+.match-league-tag {
+  color: #94a3b8 !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+}
+
+.match-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.match-status-pill.live {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #ff6b6b;
+}
+
+.match-status-pill.upcoming {
+  background: rgba(148, 163, 184, 0.1);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  color: #94a3b8;
+}
+
+.match-item-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Red Watch Stream Button from User Screenshot */
+.btn-watch-stream {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 20px;
+  background: var(--brand-red) !important;
+  color: #ffffff !important;
+  font-size: 13px;
+  font-weight: 700;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 4px 12px rgba(216, 31, 38, 0.35);
+  white-space: nowrap;
+}
+
+.btn-watch-stream:hover {
+  background: var(--brand-red-hover) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(216, 31, 38, 0.5);
+}
+
+/* ==========================================================================
+   SOURCES ROW UNDERNEATH EACH STREAM
+   ========================================================================== */
+.match-sources-subrow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.match-sources-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #ef4444;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.match-sources-chips {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+}
+
+.match-source-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: #090d16;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  color: #cbd5e1;
+  font-size: 11.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  white-space: nowrap;
+}
+
+.match-source-chip:hover {
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(216, 31, 38, 0.45);
+}
+
+.source-chip-dot {
+  width: 6px;
+  height: 6px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #22c55e;
+  flex-shrink: 0;
+}
+
+.source-chip-text {
+  font-weight: 700;
+  letter-spacing: -0.1px;
+}
+
+.server-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #22c55e;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #22c55e;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .match-item-card {
+    padding: 14px 14px;
+    overflow: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+  .match-card-main-row {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 12px;
+  }
+  .match-item-left {
+    width: 100%;
+    min-width: 0;
+  }
+  .match-info-block {
+    width: 100%;
+    min-width: 0;
+  }
+  .match-title-h3 {
+    white-space: normal !important;
+    word-break: break-word !important;
+    font-size: 14px;
+    line-height: 1.35;
+    margin-bottom: 6px;
+  }
+  .match-item-right {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .btn-watch-stream {
+    width: 100%;
+    justify-content: center;
+  }
+  .match-sources-subrow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+  }
+  .category-filter-tabs {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .cat-filter-btn {
+    white-space: nowrap;
+    padding: 6px 10px;
+    font-size: 11.5px;
+  }
+}
+
+/* ==========================================================================
+   VIDEO PLAYER THEATER SECTION (Full StreamKing Player View)
+   ========================================================================== */
+.player-theater-section {
+  margin-top: 24px;
+}
+
+.player-page-view {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-lg);
+}
+
+.player-match-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 16px;
+}
+
+.player-match-info-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.player-match-icon {
+  font-size: 24px;
+}
+
+.player-match-titles h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-white);
+  line-height: 1.2;
+}
+
+.player-match-kickoff-time {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.player-action-btns-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.player-home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: #111522;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  color: var(--text-light);
+  font-size: 12px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.player-home-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--brand-red);
+  color: #ffffff;
+}
+
+.discord-top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--discord-blurple);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.discord-top-btn:hover {
+  background: var(--discord-hover);
+}
+
+.player-top-ad-wrapper {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Video Frame Container */
+.player-video-card {
+  position: relative;
+  width: 100%;
+  background: #000000;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+}
+
+.video-frame-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-frame-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  background: #080a10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  z-index: 2;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.spinner {
+  width: 44px;
+  height: 44px;
+  border: 3px solid rgba(216, 31, 38, 0.2);
+  border-top-color: var(--brand-red);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.player-pop-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  cursor: pointer;
+  background: transparent;
+}
+
+/* Stream Servers Bar */
+.stream-servers-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: #0e121d;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+}
+
+.server-label-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--brand-red);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.server-buttons-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-server-choice {
+  padding: 6px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  color: var(--text-light);
+  font-size: 12px;
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.btn-server-choice:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--brand-red);
+  color: #ffffff;
+}
+
+.btn-server-choice.active {
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  color: #ffffff;
+  box-shadow: 0 2px 10px var(--brand-red-glow);
+}
+
+/* 728x90 Ad (User Requested: Above Player Section, Navbar k neechay) */
+.player-top-728-ad-wrapper,
+.player-servers-bottom-ad-wrapper {
+  margin: 10px auto 16px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 728px;
+  overflow: hidden;
+}
+
+.player-top-728-ad-wrapper iframe,
+.player-servers-bottom-ad-wrapper iframe {
+  width: 728px !important;
+  height: 90px !important;
+  border: none !important;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .player-top-728-ad-wrapper,
+  .player-servers-bottom-ad-wrapper {
+    width: 100% !important;
+    overflow: hidden !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: calc(90px * min(1, (100vw - 28px) / 728));
+    padding: 4px 0;
+  }
+
+  .player-top-728-ad-wrapper iframe,
+  .player-servers-bottom-ad-wrapper iframe {
+    width: 728px !important;
+    height: 90px !important;
+    max-width: none !important;
+    transform-origin: center center;
+    transform: scale(calc(min(1, (100vw - 28px) / 728)));
+    flex-shrink: 0;
+  }
+}
+
+/* 300x250 Ad: Left Gutter Red Box on Desktop | Above Player on Mobile */
+.player-ad-300x250-responsive {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.player-ad-300x250-responsive iframe {
+  width: 300px !important;
+  height: 250px !important;
+  border: 0 !important;
+  outline: none !important;
+  background: transparent !important;
+  display: block;
+}
+
+@media (min-width: 1200px) {
+  html.player-active .player-ad-300x250-responsive {
+    display: block !important;
+    position: fixed !important;
+    top: 140px !important;
+    left: max(14px, calc(50vw - 430px - 300px - 20px)) !important;
+    width: 300px !important;
+    height: 250px !important;
+    z-index: 95;
+    pointer-events: auto;
+    overflow: hidden;
+  }
+
+  @media (max-width: 1440px) {
+    html.player-active .player-ad-300x250-responsive {
+      left: 14px !important;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  .player-ad-300x250-responsive {
+    position: relative !important;
+    margin: 14px auto 16px auto !important;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+  }
+}
+
+.player-bottom-ad-wrapper {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.player-footer-hint-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* ==========================================================================
+   DYNAMIC MATCH STREAM GUIDE & FAQS (Player Page)
+   ========================================================================== */
+.match-stream-guide-section {
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.match-guide-badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.guide-badge-sport {
+  display: inline-flex;
+  align-items: center;
+  background: #e10600;
+  color: #ffffff;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+.guide-badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(16, 185, 129, 0.16);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #10b981;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.guide-badge-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #10b981;
+  box-shadow: 0 0 6px #10b981;
+  animation: liveBadgePulse 1.8s infinite ease-in-out;
+}
+
+@keyframes liveBadgePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.85); }
+}
+
+.guide-badge-res {
+  display: inline-flex;
+  align-items: center;
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.match-guide-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+}
+
+.match-guide-subtitle {
+  font-size: 13.5px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+}
+
+/* 3 Pillars Grid */
+.match-guide-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.guide-pillar-card {
+  background: #0c101c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 20px 18px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.guide-pillar-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(216, 31, 38, 0.35);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.pillar-card-icon {
+  margin-bottom: 12px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.pillar-icon-lightning {
+  color: #f59e0b;
+}
+
+.pillar-icon-shield {
+  color: #38bdf8;
+}
+
+.pillar-icon-device {
+  color: #a855f7;
+}
+
+.pillar-card-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.pillar-card-text {
+  font-size: 12.5px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* FAQs Container */
+.match-guide-faqs-container {
+  margin-top: 10px;
+}
+
+.match-faqs-section-heading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.2px;
+}
+
+.match-faqs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.match-faq-card {
+  background: #0c101c;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 16px 20px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.match-faq-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: #0f1524;
+}
+
+.match-faq-q {
+  font-family: 'Outfit', sans-serif;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+}
+
+.match-faq-a {
+  font-size: 12.5px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .match-guide-pillars {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* ==========================================================================
+   MULTI-VIEW CENTER
+   ========================================================================== */
+.multiview-section {
+  margin-top: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 20px;
+}
+
+.multiview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.multiview-heading {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-white);
+}
+
+.multiview-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.layout-selector {
+  display: flex;
+  gap: 4px;
+  background: #0a0d14;
+  padding: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.layout-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: var(--radius-xs);
+  color: var(--text-muted);
+}
+
+.layout-btn.active {
+  background: var(--brand-red);
+  color: #ffffff;
+}
+
+.multiview-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.multiview-grid.grid-2 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .multiview-grid.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.multiview-slot {
+  background: #000000;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.slot-header {
+  padding: 8px 12px;
+  background: #111522;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.slot-body {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.slot-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ==========================================================================
+   SEO ARTICLES & CONTENT
+   ========================================================================== */
+/* ==========================================================================
+   SEO ARTICLES & CONTENT (Streamlined Web Sports Broadcasting on Methstreams)
+   ========================================================================== */
+.sports-seo-article-card {
+  margin-top: 45px;
+  padding: 32px 28px;
+  background: #0e121d;
+  border: 1px solid #1c2438;
+  border-radius: var(--radius-md);
+  color: #94a3b8;
+  line-height: 1.75;
+}
+
+.article-main-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 14px;
+  letter-spacing: -0.3px;
+}
+
+.article-subheading {
+  font-size: 17px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 28px 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.article-subheading::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background: var(--brand-red);
+  border-radius: 2px;
+}
+
+.article-paragraph {
+  font-size: 14px;
+  margin-bottom: 14px;
+  color: #94a3b8;
+}
+
+.article-paragraph strong {
+  color: #ffffff;
+}
+
+/* Tri-Platform Ecosystem Feature Cards */
+.tri-platform-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 20px 0 24px;
+}
+
+@media (min-width: 768px) {
+  .tri-platform-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tri-card {
+  background: #131929;
+  border: 1px solid #222c44;
+  border-radius: var(--radius-sm);
+  padding: 18px 16px;
+  transition: var(--transition);
+}
+
+.tri-card:hover {
+  border-color: var(--brand-red);
+  transform: translateY(-2px);
+}
+
+.tri-card-header {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tri-card-text {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Architecture Pillars Grid */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 18px 0;
+}
+
+@media (min-width: 768px) {
+  .pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pillar-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+
+.pillar-item h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.pillar-item p {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* FAQ Accordion List */
+.article-faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.faq-card-item {
+  background: #121726;
+  border: 1px solid #1e263d;
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+}
+
+.faq-q {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.faq-a {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SITE FOOTER (Exact Match to User's Sample Screenshot)
+   ========================================================================== */
+.site-footer {
+  margin-top: 60px;
+  background: #090c12;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 32px 0;
+}
+
+.footer-container-split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-left-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-brand-title {
+  font-size: 21px;
+  font-weight: 800;
+  color: #fbbf24; /* Elegant warm gold from user sample screenshot */
+  letter-spacing: -0.3px;
+  font-family: var(--font-main);
+}
+
+.footer-copyright-text {
+  font-size: 13px;
+  color: #94a3b8;
+  font-weight: 500;
+  margin: 0;
+}
+
+.footer-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.footer-nav-item {
+  color: #e2e8f0;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: var(--transition);
+}
+
+.footer-nav-item:hover {
+  color: var(--brand-red);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 640px) {
+  .footer-container-split {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .footer-nav-right {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
+
+/* ==========================================================================
+   LEGAL MODALS
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  max-width: 520px;
+  width: 100%;
+  padding: 24px;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--text-white);
+}
+
+.modal-close-btn {
+  font-size: 24px;
+  color: var(--text-muted);
+}
+
+.modal-body {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Sticky Ads */
+.sticky-left-ad-bar {
+  position: fixed;
+  left: 10px;
+  top: 100px;
+  z-index: 90;
+  display: none;
+}
+
+@media (min-width: 1560px) {
+  .sticky-left-ad-bar {
+    display: block;
+  }
+}
+
+.close-sticky-left-ad-btn,
+.close-sticky-right-ad-btn {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 24px;
+  height: 24px;
+  background: #d81f26;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   HOMEPAGE ZERO ADS ENFORCEMENT & CONTAINER TUNING
+   Ads only exist on Match Page & Player Page. Absolutely NO ADS on Homepage.
+   ========================================================================== */
+html:not(.category-active):not(.player-active) .desktop-sidebar-ad,
+html:not(.category-active):not(.player-active) .match-page-fixed-ad-left,
+html:not(.category-active):not(.player-active) .player-ad-300x250-responsive,
+html:not(.category-active):not(.player-active) .player-top-728-ad-wrapper,
+html:not(.category-active):not(.player-active) .mobile-sticky-ad-bar {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Category matches view container on desktop to give room to side gutter ads */
+@media (min-width: 1200px) {
+  html.category-active #category-matches-view {
+    max-width: 980px;
+    margin: 24px auto 0 auto;
+  }
+}
+
+/* Player theater section on desktop to give room to 300x250 and 160x600 ads */
+@media (min-width: 1200px) {
+  html.player-active .player-theater-section {
+    max-width: 860px;
+    margin: 18px auto 0 auto;
+  }
+
+  @media (max-width: 1440px) {
+    html.player-active .player-theater-section {
+      margin-left: calc(300px + 28px);
+      margin-right: calc(160px + 28px);
+      max-width: calc(100vw - 520px);
+    }
+  }
+}
+
+/* ==========================================================================
+   DESKTOP GUTTER SIDEBAR ADS (Right 160x600)
+   ========================================================================== */
+.desktop-sidebar-ad {
+  display: none !important; /* Hidden on homepage, mobile and tablet */
+  pointer-events: auto;
+  z-index: 90;
+}
+
+.desktop-ad-wrapper {
+  display: block;
+  width: 160px;
+  height: 600px;
+  overflow: hidden;
+}
+
+.desktop-ad-wrapper iframe {
+  width: 160px !important;
+  height: 600px !important;
+  border: none !important;
+  display: block !important;
+}
+
+/* Right Skyscraper (160x600) - Displays on Match Page and Player Page on desktop */
+@media (min-width: 1200px) {
+  html.category-active .desktop-sidebar-ad--right {
+    display: flex !important;
+    position: fixed !important;
+    top: 80px;
+    right: max(12px, calc(50vw - 490px - 160px - 18px));
+    width: 160px;
+    height: 600px;
+  }
+
+  html.player-active .desktop-sidebar-ad--right {
+    display: flex !important;
+    position: fixed !important;
+    top: 90px;
+    right: max(14px, calc(50vw - 430px - 160px - 20px));
+    width: 160px;
+    height: 600px;
+  }
+
+  @media (max-width: 1440px) {
+    html.player-active .desktop-sidebar-ad--right {
+      right: 14px !important;
+    }
+  }
+}
+
+/* Match Page Mobile 300x250 Ad (User Requested: PC/Mob dono py 250*300 ad) */
+.match-page-mobile-ad-300x250 {
+  display: none !important;
+}
+
+@media (max-width: 1199px) {
+  html.category-active .match-page-mobile-ad-300x250 {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    margin: 16px auto 20px auto;
+    width: 300px;
+    height: 250px;
+  }
+}
+
+/* Match Page Desktop Left Fixed Ad (160x300) - Only shown on Match Page */
+.match-page-fixed-ad-left {
+  display: none !important;
+}
+
+@media (min-width: 1200px) {
+  html.category-active .match-page-fixed-ad-left {
+    display: block !important;
+    position: fixed !important;
+    top: 220px;
+    left: max(12px, calc(50vw - 490px - 160px - 18px));
+    width: 160px;
+    height: 300px;
+    z-index: 95;
+    pointer-events: auto;
+  }
+
+  .match-page-ad-box {
+    width: 160px;
+    height: 300px;
+    display: block;
+    overflow: hidden;
+  }
+
+  .match-page-ad-box iframe {
+    width: 160px !important;
+    height: 300px !important;
+    border: none !important;
+    display: block !important;
+  }
+}
+
+/* ==========================================================================
+   MOBILE STICKY BOTTOM AD BANNER (User Requested: Mobile Version Only)
+   ========================================================================== */
+.mobile-sticky-ad-bar {
+  display: none !important; /* Completely hidden on desktop / laptop */
+}
+
+@media (max-width: 768px) {
+  .mobile-sticky-ad-bar {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    min-height: 60px;
+    z-index: 99999 !important;
+    background: rgba(8, 10, 16, 0.96);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    padding: 2px 0;
+  }
+
+  .mobile-sticky-ad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .mobile-sticky-ad-container iframe {
+    max-width: 100% !important;
+    border: none;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Scale cleanly for phones narrower than 468px so ad never overflows or clips */
+  @media (max-width: 480px) {
+    .mobile-sticky-ad-container {
+      transform-origin: center bottom;
+      transform: scale(calc(min(1, (100vw - 8px) / 468)));
+    }
+  }
+
+  /* Extra bottom padding on body so sticky ad doesn't obscure footer links */
+  body {
+    padding-bottom: 68px !important;
+  }
+}
+
+/* ==========================================================================
+   NATIVE BANNER AD (Match Page Responsive 4:1 Widget)
+   ========================================================================== */
+.match-page-native-banner-container {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 16px 0 22px 0;
+  box-sizing: border-box;
+  clear: both;
+}
+
+.match-page-native-banner-card {
+  width: 100%;
+  background: var(--bg-card, #121826);
+  border: 1px solid var(--border-card, rgba(255, 255, 255, 0.08));
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.match-page-native-banner-card:hover {
+  border-color: rgba(216, 31, 38, 0.45);
+  box-shadow: 0 0 16px rgba(216, 31, 38, 0.2), 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.native-ad-badge-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  padding: 0 2px;
+}
+
+.native-ad-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.native-ad-label::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--brand-red, #d81f26);
+}
+
+#container-59629c83e1bb5ab814a9a53e7f3ae0df {
+  width: 100% !important;
+  min-height: 80px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#container-59629c83e1bb5ab814a9a53e7f3ae0df iframe,
+#container-59629c83e1bb5ab814a9a53e7f3ae0df div {
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  .match-page-native-banner-container {
+    margin: 12px 0 16px 0;
+  }
+  .match-page-native-banner-card {
+    padding: 10px 10px;
+    border-radius: 10px;
+  }
+}
+
+/* ==========================================================================
+   ADSTERRA SOCIAL BAR (Restricted ONLY to Player Page)
+   ========================================================================== */
+/* Display floating Social Bar in corner ONLY on Player Page */
+html.player-active [class*="social-bar"],
+html.player-active [id*="social-bar"],
+html.player-active [id*="socialbar"],
+html.player-active [id^="asg-"],
+html.player-active [id^="asg_"] {
+  display: block !important;
+  pointer-events: auto !important;
+  visibility: visible !important;
+}
+
+/* Strictly hide floating Social Bar on Match Page AND Homepage */
+html:not(.player-active) [class*="social-bar"],
+html:not(.player-active) [id*="social-bar"],
+html:not(.player-active) [id*="socialbar"],
+html:not(.player-active) [id^="asg-"],
+html:not(.player-active) [id^="asg_"] {
+  display: none !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+}
+
+
+

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Rich Crimson Red matching user screenshot -->
+    <linearGradient id="squircleBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#cf172d"/>
+      <stop offset="100%" stop-color="#b00f22"/>
+    </linearGradient>
+
+    <!-- Clip path to keep shadow neatly inside squircle -->
+    <clipPath id="squircleClip">
+      <rect x="32" y="32" width="448" height="448" rx="112" ry="112" />
+    </clipPath>
+
+    <!-- Soft, clean diagonal drop-shadow -->
+    <filter id="mShadow" x="-20%" y="-20%" width="160%" height="160%">
+      <feDropShadow dx="8" dy="12" stdDeviation="4" flood-color="#5a000c" flood-opacity="0.65"/>
+      <feDropShadow dx="18" dy="24" stdDeviation="10" flood-color="#400007" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Red Squircle -->
+  <rect x="32" y="32" width="448" height="448" rx="112" ry="112" fill="url(#squircleBg)" />
+
+  <!-- Subtle Inner Border Highlight -->
+  <rect x="32" y="32" width="448" height="448" rx="112" ry="112" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="6" />
+
+  <!-- Letter M Group with Shadow -->
+  <g clip-path="url(#squircleClip)">
+    <!-- Main Letter M with Realistic Shadow -->
+    <path d="M 132,376 L 132,148 Q 132,136 144,136 L 182,136 Q 192,136 198,144 L 256,238 L 314,144 Q 320,136 330,136 L 368,136 Q 380,136 380,148 L 380,376 Q 380,384 372,384 L 336,384 Q 328,384 328,376 L 328,222 L 274,310 Q 266,322 256,322 Q 246,322 238,310 L 184,222 L 184,376 Q 184,384 176,384 L 140,384 Q 132,384 132,376 Z" fill="#ffffff" filter="url(#mShadow)" />
+    <!-- Crisp White Foreground Letter M -->
+    <path d="M 132,376 L 132,148 Q 132,136 144,136 L 182,136 Q 192,136 198,144 L 256,238 L 314,144 Q 320,136 330,136 L 368,136 Q 380,136 380,148 L 380,376 Q 380,384 372,384 L 336,384 Q 328,384 328,376 L 328,222 L 274,310 Q 266,322 256,322 Q 246,322 238,310 L 184,222 L 184,376 Q 184,384 176,384 L 140,384 Q 132,384 132,376 Z" fill="#ffffff" />
+  </g>
+</svg>

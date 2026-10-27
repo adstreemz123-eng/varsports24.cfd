@@ -1,0 +1,16 @@
+{
+  "name": "methstreams",
+  "version": "1.0.0",
+  "description": "MethStreams Live Sports Streaming Platform",
+  "main": "index.html",
+  "scripts": {
+    "build": "node update-domain.js ustream.cfd && node build-dist.js"
+  },
+  "keywords": [
+    "methstreams",
+    "sports",
+    "live-streams"
+  ],
+  "author": "",
+  "license": "ISC"
+}
