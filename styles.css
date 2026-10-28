@@ -2458,7 +2458,8 @@ html:not(.category-active):not(.player-active) .mobile-sticky-ad-bar {
 /* ==========================================================================
    NATIVE BANNER AD (Match Page Responsive 4:1 Widget)
    ========================================================================== */
-.match-page-native-banner-container {
+.match-page-native-banner-container,
+.player-native-banner-container {
   display: block;
   width: 100%;
   max-width: 100%;

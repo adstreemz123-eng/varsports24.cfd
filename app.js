@@ -1065,13 +1065,6 @@ function showCategoryMatchesView(catId) {
   if (matchesView) matchesView.classList.remove('hidden');
   if (elements.desktopNav) elements.desktopNav.classList.remove('hidden');
 
-  // Ensure Native Banner Ad is in match page slot (below last match)
-  const nativeBanner = document.getElementById('match-page-native-banner-container');
-  const catSlot = document.getElementById('category-native-banner-slot');
-  if (nativeBanner && catSlot && !catSlot.contains(nativeBanner)) {
-    catSlot.appendChild(nativeBanner);
-  }
-
   // Activate Match Page Ads: Popunder on match click + Native Banner 4:1 widget
   AdController.initPopunder();
   AdController.initNativeBanner();
@@ -1338,13 +1331,6 @@ async function openMatchInPlayer(match, updateHash = true, initialSourceIndex = 
   if (elements.categoryMatchesView) elements.categoryMatchesView.classList.add('hidden');
   if (elements.playerSection) elements.playerSection.classList.remove('hidden');
   if (elements.desktopNav) elements.desktopNav.classList.add('hidden');
-
-  // Move Native Banner Ad below player stream sources on player page
-  const playerNativeBanner = document.getElementById('match-page-native-banner-container');
-  const playerSlot = document.getElementById('player-native-banner-slot');
-  if (playerNativeBanner && playerSlot && !playerSlot.contains(playerNativeBanner)) {
-    playerSlot.appendChild(playerNativeBanner);
-  }
 
   // Activate Player Page Ads: Popunder on click-to-play + Social Bar in corner + Native Banner
   AdController.initPopunder();
