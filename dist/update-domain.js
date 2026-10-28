@@ -118,10 +118,27 @@ Sitemap: ${newDomain}/sitemap.xml
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>${newDomain}/methstreams-watch/</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
 `;
   fs.writeFileSync(sitemapPath, sitemapContent, 'utf8');
-  console.log('  [3/6] ✅ sitemap.xml updated!');
+  console.log('  [3/6] ✅ sitemap.xml updated (with / and /methstreams-watch/)!');
+
+  // 3b. UPDATE methstreams-watch/index.html
+  const watchIndexPath = path.join(__dirname, 'methstreams-watch', 'index.html');
+  if (fs.existsSync(watchIndexPath)) {
+    let watchHtml = fs.readFileSync(watchIndexPath, 'utf8');
+    watchHtml = watchHtml.replace(/<link rel="canonical" href="[^"]*"\s*\/?>/i, `<link rel="canonical" href="${newDomain}/" />`);
+    watchHtml = watchHtml.replace(/<meta http-equiv="refresh" content="0;\s*url=[^"]*"\s*\/?>/i, `<meta http-equiv="refresh" content="0; url=${newDomain}/" />`);
+    watchHtml = watchHtml.replace(/window\.location\.replace\(["'][^"']*["']\);/i, `window.location.replace("${newDomain}/");`);
+    fs.writeFileSync(watchIndexPath, watchHtml, 'utf8');
+    console.log('  [+] ✅ methstreams-watch/index.html redirects updated!');
+  }
 
   // 4. UPDATE sitemap.xsl
   if (fs.existsSync(sitemapXslPath)) {

@@ -7,7 +7,7 @@
   <xsl:template match="/">
     <html xmlns="http://www.w3.org/1999/xhtml">
       <head>
-        <title>XML Sitemap - ustream.cfd</title>
+        <title>XML Sitemap - sparkstream.cfd</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <style type="text/css">
           body {
@@ -93,8 +93,8 @@
       </head>
       <body>
         <div class="container">
-          <h1><span>⚡ ustream.cfd</span> XML Sitemap</h1>
-          <p class="desc">This is a search-engine optimized XML Sitemap generated for <strong>ustream.cfd</strong>. It provides Google, Bing, and other web crawlers with the structure of active pages on this portal.</p>
+          <h1><span>⚡ sparkstream.cfd</span> XML Sitemap</h1>
+          <p class="desc">This is a search-engine optimized XML Sitemap generated for <strong>sparkstream.cfd</strong>. It provides Google, Bing, and other web crawlers with the structure of active pages on this portal.</p>
           <table>
             <thead>
               <tr>
