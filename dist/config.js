@@ -24,7 +24,7 @@ const SITE_CONFIG = {
   description: "Catch free NFL broadcast action and live sports in HD on MethStreams. Access lag-free feeds, daily game schedules, and real-time scores on all devices.",
 
   // 6. Social Share Image (OG Image)
-  ogImage: "https://sparkstream.cfd/methstreams-nfl-streams.png",
+  ogImage: "https://sparkstream.cfd/MethStreams-NFL-broadcast-map.png",
 
   // 7. Primary SEO Keywords (1st: MethStreams, 2nd: NFL broadcast)
   keywords: "MethStreams, NFL broadcast, free NFL broadcast, live NFL broadcast, methstreams nfl, NFL streams, MethStreams live, NBA streams, UFC streams, CFB streams, live sports schedules, sparkstream.cfd"
