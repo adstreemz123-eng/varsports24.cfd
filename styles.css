@@ -1580,7 +1580,7 @@ html.player-active #desktop-category-nav {
   }
 }
 
-/* 300x250 Ad: Left Gutter Fixed on Desktop | Below Stream Sources on Mobile */
+/* 300x250 Ad: Left Gutter Fixed on Desktop | Above Video Player on Mobile */
 .player-ad-300x250-responsive {
   display: flex;
   justify-content: center;
@@ -1620,7 +1620,7 @@ html.player-active #desktop-category-nav {
 @media (max-width: 1199px) {
   .player-ad-300x250-responsive {
     position: relative !important;
-    margin: 16px auto 20px auto !important;
+    margin: 14px auto 16px auto !important;
     width: 300px;
     height: 250px;
     overflow: hidden;
