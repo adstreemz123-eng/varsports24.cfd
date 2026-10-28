@@ -1065,9 +1065,10 @@ function showCategoryMatchesView(catId) {
   if (matchesView) matchesView.classList.remove('hidden');
   if (elements.desktopNav) elements.desktopNav.classList.remove('hidden');
 
-  // Activate Match Page Ads: Popunder on match click + Native Banner 4:1 widget
+  // Activate Match Page Ads: Popunder on match click + Native Banner 4:1 widget + Social Bar
   AdController.initPopunder();
   AdController.initNativeBanner();
+  AdController.initSocialBar();
 
   // Highlight active desktop nav link
   document.querySelectorAll('.nav-category-link').forEach(link => {
@@ -1332,9 +1333,8 @@ async function openMatchInPlayer(match, updateHash = true, initialSourceIndex = 
   if (elements.playerSection) elements.playerSection.classList.remove('hidden');
   if (elements.desktopNav) elements.desktopNav.classList.add('hidden');
 
-  // Activate Player Page Ads: Popunder on click-to-play + Social Bar in corner + Native Banner
+  // Activate Player Page Ads: Popunder on click-to-play + Native Banner (No Social Bar)
   AdController.initPopunder();
-  AdController.initSocialBar();
   AdController.initNativeBanner();
 
   // Loading state

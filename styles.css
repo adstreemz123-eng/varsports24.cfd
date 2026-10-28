@@ -2400,10 +2400,10 @@ html:not(.category-active):not(.player-active) .mobile-sticky-ad-bar {
 }
 
 /* ==========================================================================
-   MOBILE STICKY BOTTOM AD BANNER (User Requested: Mobile Version Only)
+   STICKY BOTTOM AD BANNER (468x60 on Match Page | 728x90 on Player Page)
    ========================================================================== */
 .mobile-sticky-ad-bar {
-  display: none !important; /* Completely hidden on desktop / laptop */
+  display: none !important; /* Completely hidden on homepage */
 }
 
 @media (max-width: 768px) {
@@ -2427,31 +2427,67 @@ html:not(.category-active):not(.player-active) .mobile-sticky-ad-bar {
   }
 
   .mobile-sticky-ad-container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     width: 100%;
     overflow: hidden;
   }
 
-  .mobile-sticky-ad-container iframe {
+  /* Show 468x60 sticky ONLY on Match Page */
+  html.category-active .mobile-sticky-ad-container--match {
+    display: flex !important;
+  }
+  html.category-active .mobile-sticky-ad-container--player {
+    display: none !important;
+  }
+
+  /* Show 728x90 sticky ONLY on Player Page */
+  html.player-active .mobile-sticky-ad-container--player {
+    display: flex !important;
+  }
+  html.player-active .mobile-sticky-ad-container--match {
+    display: none !important;
+  }
+
+  /* 468x60 Match page scale */
+  .mobile-sticky-ad-container--match iframe {
     max-width: 100% !important;
     border: none;
     display: block;
     margin: 0 auto;
   }
 
-  /* Scale cleanly for phones narrower than 468px so ad never overflows or clips */
   @media (max-width: 480px) {
-    .mobile-sticky-ad-container {
+    .mobile-sticky-ad-container--match {
       transform-origin: center bottom;
       transform: scale(calc(min(1, (100vw - 8px) / 468)));
     }
   }
 
-  /* Extra bottom padding on body so sticky ad doesn't obscure footer links */
+  /* 728x90 Player page mobile responsive scale */
+  .mobile-sticky-ad-container--player iframe {
+    width: 728px !important;
+    height: 90px !important;
+    max-width: none !important;
+    border: none;
+    display: block;
+    margin: 0 auto;
+    flex-shrink: 0;
+    transform-origin: center center;
+    transform: scale(calc(min(1, (100vw - 12px) / 728)));
+  }
+
+  html.player-active .mobile-sticky-ad-bar {
+    min-height: calc(90px * min(1, (100vw - 12px) / 728) + 6px);
+  }
+
+  /* Extra bottom padding on body so sticky ad doesn't obscure content */
   body {
     padding-bottom: 68px !important;
+  }
+  html.player-active body {
+    padding-bottom: calc(90px * min(1, (100vw - 12px) / 728) + 16px) !important;
   }
 }
 
@@ -2537,25 +2573,25 @@ html:not(.category-active):not(.player-active) .mobile-sticky-ad-bar {
 }
 
 /* ==========================================================================
-   ADSTERRA SOCIAL BAR (Restricted ONLY to Player Page)
+   ADSTERRA SOCIAL BAR (Restricted ONLY to Match Page)
    ========================================================================== */
-/* Display floating Social Bar in corner ONLY on Player Page */
-html.player-active [class*="social-bar"],
-html.player-active [id*="social-bar"],
-html.player-active [id*="socialbar"],
-html.player-active [id^="asg-"],
-html.player-active [id^="asg_"] {
+/* Display floating Social Bar in corner ONLY on Match Page */
+html.category-active [class*="social-bar"],
+html.category-active [id*="social-bar"],
+html.category-active [id*="socialbar"],
+html.category-active [id^="asg-"],
+html.category-active [id^="asg_"] {
   display: block !important;
   pointer-events: auto !important;
   visibility: visible !important;
 }
 
-/* Strictly hide floating Social Bar on Match Page AND Homepage */
-html:not(.player-active) [class*="social-bar"],
-html:not(.player-active) [id*="social-bar"],
-html:not(.player-active) [id*="socialbar"],
-html:not(.player-active) [id^="asg-"],
-html:not(.player-active) [id^="asg_"] {
+/* Strictly hide floating Social Bar on Player Page AND Homepage */
+html:not(.category-active) [class*="social-bar"],
+html:not(.category-active) [id*="social-bar"],
+html:not(.category-active) [id*="socialbar"],
+html:not(.category-active) [id^="asg-"],
+html:not(.category-active) [id^="asg_"] {
   display: none !important;
   pointer-events: none !important;
   visibility: hidden !important;

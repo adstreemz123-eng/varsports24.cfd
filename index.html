@@ -610,19 +610,6 @@
          VIEW 3: DEDICATED PLAYER PAGE VIEW
          ==================================================================== -->
     <section class="player-theater-section hidden" id="player-theater-section">
-      <!-- 728x90 Top Banner Ad: Above Player Section (Navbar ke neechay / Player k uper) -->
-      <div class="player-top-728-ad-wrapper" id="player-top-728-ad-wrapper">
-        <iframe 
-          srcdoc="<!DOCTYPE html><html><head><meta charset='utf-8'><style>html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:transparent;}iframe{border:none!important;outline:none!important;display:block;margin:0 auto;}</style></head><body><script type='text/javascript'>atOptions={'key':'c8e1e1b87041ff00b1aee82987be5f27','format':'iframe','height':90,'width':728,'params':{}};</script><script type='text/javascript' src='https://czernik.org/22/c8e1e1b87041ff00b1aee82987be5f27'></script></body></html>" 
-          width="728" 
-          height="90" 
-          frameborder="0"
-          style="border:none;outline:none;overflow:hidden;width:728px;height:90px;display:block;background:transparent;" 
-          scrolling="no" 
-          loading="eager">
-        </iframe>
-      </div>
-
       <div class="player-page-view">
         
         <!-- Top Match Info & Actions Bar -->
@@ -1075,15 +1062,29 @@
     </div>
   </div>
 
-  <!-- MOBILE STICKY BOTTOM AD BANNER (User Requested: Mobile Version Only) -->
+  <!-- STICKY BOTTOM AD BANNER (468x60 on Match Page | 728x90 on Player Page Mobile Responsive) -->
   <aside class="mobile-sticky-ad-bar" id="mobile-sticky-ad-bar" aria-label="Advertisement">
-    <div class="mobile-sticky-ad-container">
+    <!-- Match Page Sticky Ad (468x60) -->
+    <div class="mobile-sticky-ad-container mobile-sticky-ad-container--match" id="mobile-sticky-ad-468">
       <iframe 
         srcdoc="<!DOCTYPE html><html><head><meta charset='utf-8'><style>html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:transparent;}iframe{border:none!important;outline:none!important;display:block;margin:0 auto;width:468px!important;height:60px!important;}</style></head><body><script type='text/javascript'>atOptions={'key':'c2f5b5991d08e1ffbe0c6b61adbd00ce','format':'iframe','height':60,'width':468,'params':{}};</script><script type='text/javascript' src='https://czernik.org/22/c2f5b5991d08e1ffbe0c6b61adbd00ce'></script></body></html>" 
         width="468" 
         height="60" 
         frameborder="0"
         style="border:none;outline:none;overflow:hidden;width:468px;height:60px;display:block;background:transparent;" 
+        scrolling="no" 
+        loading="eager">
+      </iframe>
+    </div>
+
+    <!-- Player Page Sticky Ad (728x90 Mobile Responsive) -->
+    <div class="mobile-sticky-ad-container mobile-sticky-ad-container--player" id="mobile-sticky-ad-728">
+      <iframe 
+        srcdoc="<!DOCTYPE html><html><head><meta charset='utf-8'><style>html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;background:transparent;}iframe{border:none!important;outline:none!important;display:block;margin:0 auto;width:728px!important;height:90px!important;}</style></head><body><script type='text/javascript'>atOptions={'key':'c8e1e1b87041ff00b1aee82987be5f27','format':'iframe','height':90,'width':728,'params':{}};</script><script type='text/javascript' src='https://czernik.org/22/c8e1e1b87041ff00b1aee82987be5f27'></script></body></html>" 
+        width="728" 
+        height="90" 
+        frameborder="0"
+        style="border:none;outline:none;overflow:hidden;width:728px;height:90px;display:block;background:transparent;" 
         scrolling="no" 
         loading="eager">
       </iframe>
