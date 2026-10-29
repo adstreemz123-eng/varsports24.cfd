@@ -2,14 +2,14 @@
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sparkstream.cfd/</loc>
-    <lastmod>2026-10-28</lastmod>
+    <loc>https://mailstream.cfd/</loc>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sparkstream.cfd/methstreams-watch/</loc>
-    <lastmod>2026-10-28</lastmod>
+    <loc>https://mailstream.cfd/methstreams-watch/</loc>
+    <lastmod>2026-10-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>

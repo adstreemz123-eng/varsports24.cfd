@@ -12,22 +12,22 @@ const SITE_CONFIG = {
   siteName: "MethStreams",
 
   // 2. Aapki Custom Domain (maslan: https://mailstream.cfd)
-  domain: "https://sparkstream.cfd",
+  domain: "https://mailstream.cfd",
 
   // 3. Discord Support Link
   discordUrl: "https://discord.gg/gmKmhVKF4G",
 
   // 4. Site Title (Browser Tab & Google Search Title - Max 60 chars for SEO)
-  title: "MethStreams - Free NFL Broadcast & Live HD Sports Streaming",
+  title: "MethStreams - Free Live NFL Broadcast & Sports Streaming",
 
   // 5. Meta Description (Google Search Snippet - Max 160 chars)
-  description: "Catch free NFL broadcast action and live sports in HD on MethStreams. Access lag-free feeds, daily game schedules, and real-time scores on all devices.",
+  description: "Stream live NFL broadcast games and sports in HD on MethStreams. Get instant kickoff schedules, real-time scores, and fast coverage for NBA, UFC, and more.",
 
   // 6. Social Share Image (OG Image)
-  ogImage: "https://sparkstream.cfd/MethStreams-NFL-broadcast-map.png",
+  ogImage: "https://mailstream.cfd/MethStreams-NFL-broadcast-map.png",
 
   // 7. Primary SEO Keywords (1st: MethStreams, 2nd: NFL broadcast)
-  keywords: "MethStreams, NFL broadcast, free NFL broadcast, live NFL broadcast, methstreams nfl, NFL streams, MethStreams live, NBA streams, UFC streams, CFB streams, live sports schedules, sparkstream.cfd"
+  keywords: "MethStreams, NFL broadcast, free NFL broadcast, live NFL broadcast, methstreams nfl, NFL streams, MethStreams live, NBA streams, UFC streams, CFB streams, live sports schedules, mailstream.cfd"
 };
 
 // Export for Node.js scripts if running in terminal

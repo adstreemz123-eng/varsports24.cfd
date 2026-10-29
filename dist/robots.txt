@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://sparkstream.cfd/sitemap.xml
+Sitemap: https://mailstream.cfd/sitemap.xml
