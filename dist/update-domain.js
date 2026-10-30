@@ -90,8 +90,10 @@ async function run() {
     let configCode = fs.readFileSync(configPath, 'utf8');
     configCode = configCode.replace(/domain:\s*["'][^"']*["']/i, `domain: "${newDomain}"`);
     configCode = configCode.replace(/ogImage:\s*["'][^"']*["']/i, `ogImage: "${newOgImage}"`);
-    // Add new host to keywords if not present
-    if (!configCode.includes(newHost)) {
+    const oldHostForConfig = (config.domain || '').replace(/^https?:\/\//i, '').replace(/\/+$/, '');
+    if (oldHostForConfig && oldHostForConfig !== newHost) {
+      configCode = configCode.replace(new RegExp(oldHostForConfig.replace(/\./g, '\\.'), 'gi'), newHost);
+    } else if (!configCode.includes(newHost)) {
       configCode = configCode.replace(/(keywords:\s*["'][^"']*)(["'])/i, `$1, ${newHost}$2`);
     }
     fs.writeFileSync(configPath, configCode, 'utf8');
@@ -180,14 +182,24 @@ Sitemap: ${newDomain}/sitemap.xml
     html = html.replace(/"@id":\s*"https?:\/\/[^"\/]+(?:\/[^"]*)?#website"/gi, `"@id": "${newDomain}/#website"`);
     html = html.replace(/"url":\s*"https?:\/\/[^"\/]+(?:\/[^"]*)?"/gi, `"url": "${newDomain}/"`);
     html = html.replace(/"@id":\s*"https?:\/\/[^"\/]+(?:\/[^"]*)?#faq"/gi, `"@id": "${newDomain}/#faq"`);
-    html = html.replace(/The primary official portal is [a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/gi, `The primary official portal is ${newHost}`);
+    html = html.replace(/The primary official (?:portal|access point) is [a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/gi, `The primary official access point is ${newHost}`);
+    html = html.replace(/Soccer category (?:on|button on) [a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/gi, `Soccer category on ${newHost}`);
 
     // Bookmark bar domain text
     html = html.replace(/<b id="bookmark-domain">[^<]*<\/b>/i, `<b id="bookmark-domain">${newHost}</b>`);
 
-    // Article domain mentions
+    // Article & General domain mentions
     html = html.replace(/at <strong>[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}<\/strong>/gi, `at <strong>${newHost}</strong>`);
     html = html.replace(/is <strong>[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}<\/strong>/gi, `is <strong>${newHost}</strong>`);
+    html = html.replace(/open [a-zA-Z0-9.-]+\.[a-zA-Z]{2,} directly within your Smart TV browser/gi, `open ${newHost} directly within your Smart TV browser`);
+    html = html.replace(/([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})(?=" \/>\r?\n  <meta name="robots")/gi, `${newHost}`);
+
+    // Replace any remaining old domain strings in index.html
+    const oldHost = (config.domain || '').replace(/^https?:\/\//i, '').replace(/\/+$/, '');
+    if (oldHost && oldHost !== newHost) {
+      const oldHostRegex = new RegExp(oldHost.replace(/\./g, '\\.'), 'gi');
+      html = html.replace(oldHostRegex, newHost);
+    }
 
     fs.writeFileSync(indexPath, html, 'utf8');
     console.log('  [6/6] ✅ index.html (Canonical, Schema, OG, Twitter, Dates, Article) updated!');

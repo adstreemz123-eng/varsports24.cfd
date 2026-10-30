@@ -109,8 +109,8 @@ const CATEGORY_CARDS = [
     id: 'nfl',
     targetSport: 'american-football',
     title: 'NFL',
-    subtitle: 'METHSTREAMS NFL BROADCAST | LIVE GAME FEEDS & REAL-TIME SCHEDULES',
-    description: 'Stream free NFL broadcast action on MethStreams. Follow every Sunday drive, Thursday & Monday Night Football, and RedZone in 1080p HD...',
+    subtitle: 'METHSTREAMS NFL BROADCAST | HD GAME STREAMS & LIVE KICKOFF SCHEDULES',
+    description: 'Catch every live NFL broadcast on MethStreams with zero buffering. Stream Sunday afternoon matchups, Thursday & Monday Night Football, and RedZone in Full HD...',
     badgeType: 'NFL',
     icon: '🏈'
   },
@@ -118,8 +118,8 @@ const CATEGORY_CARDS = [
     id: 'soccer',
     targetSport: 'football',
     title: 'Soccer',
-    subtitle: 'METHSTREAMS SOCCER LIVE | PREMIER LEAGUE, UCL & ELITE TOURNAMENTS',
-    description: 'Catch live soccer streams on MethStreams. Watch Premier League, Champions League, La Liga, and international clashes with zero buffering...',
+    subtitle: 'METHSTREAMS SOCCER STREAMS | PREMIER LEAGUE, CHAMPIONS LEAGUE & LA LIGA',
+    description: 'Enjoy free live soccer streams on MethStreams. Experience Premier League thrillers, UEFA Champions League nights, and top European football in 1080p...',
     badgeType: 'SOCCER',
     icon: '⚽'
   },
@@ -127,8 +127,8 @@ const CATEGORY_CARDS = [
     id: 'nba',
     targetSport: 'basketball',
     title: 'NBA',
-    subtitle: 'METHSTREAMS NBA BASKETBALL | REGULAR SEASON & PLAYOFF STREAMS',
-    description: 'Stream thrilling NBA basketball on MethStreams. Enjoy high-definition court action, prime matchups, and playoff showdowns live online...',
+    subtitle: 'METHSTREAMS NBA BASKETBALL | LIVE COURT ACTION & PLAYOFF SHOWDOWNS',
+    description: 'Follow high-octane NBA streams on MethStreams. Watch every buzzer-beater, primetime rivalry, and postseason series live in smooth 60 FPS...',
     badgeType: 'NBA',
     icon: '🏀'
   },
@@ -136,8 +136,8 @@ const CATEGORY_CARDS = [
     id: 'cfb',
     targetSport: 'american-football',
     title: 'CFB',
-    subtitle: 'METHSTREAMS COLLEGE FOOTBALL | NCAA SATURDAY KICKOFF COVERAGE',
-    description: 'Experience electric NCAA college football on MethStreams. Stream SEC, Big Ten, Big 12, and College Football Playoff games in HD...',
+    subtitle: 'METHSTREAMS COLLEGE FOOTBALL | NCAA GAMEDAY FEEDS & BOWL MATCHUPS',
+    description: 'Catch intense NCAA college football action on MethStreams. Stream SEC, Big Ten, Big 12 matchups, and College Football Playoff showdowns live in HD...',
     badgeType: 'CFB',
     icon: '🏈'
   },
@@ -145,8 +145,8 @@ const CATEGORY_CARDS = [
     id: 'mma-boxing',
     targetSport: 'fight',
     title: 'UFC / Boxing',
-    subtitle: 'METHSTREAMS MMA & FIGHT NIGHTS | UFC PPV & TITLE BOUTS',
-    description: 'Watch UFC Fight Nights and world championship boxing on MethStreams. Stream preliminary cards and marquee PPV fights with crystal clarity...',
+    subtitle: 'METHSTREAMS UFC & BOXING | FIGHT NIGHTS, TITLE BOUTS & PPV EVENTS',
+    description: 'Experience methstreams ufc fight cards and championship boxing live on MethStreams. Stream undercards, main card bouts, and Pay-Per-View title clashes...',
     badgeType: 'UFC-BOXING',
     icon: '🥊'
   },
@@ -154,8 +154,8 @@ const CATEGORY_CARDS = [
     id: 'nhl',
     targetSport: 'hockey',
     title: 'NHL',
-    subtitle: 'METHSTREAMS NHL HOCKEY | LIVE ICE ACTION & STANLEY CUP FEEDS',
-    description: 'Stream fast-paced NHL hockey on MethStreams. Access every period, rivalry matchup, and Stanley Cup playoff battle in smooth 60 FPS...',
+    subtitle: 'METHSTREAMS NHL HOCKEY | PUCK DROP STREAMS & STANLEY CUP PLAYOFFS',
+    description: 'Watch fast-paced NHL hockey streams on MethStreams. Follow every goal, overtime showdown, and Stanley Cup battle with crystal-clear 60 FPS video...',
     badgeType: 'NHL',
     icon: '🏒'
   },
@@ -163,8 +163,8 @@ const CATEGORY_CARDS = [
     id: 'mlb',
     targetSport: 'baseball',
     title: 'MLB',
-    subtitle: 'METHSTREAMS BASEBALL LIVE | MLB REGULAR SEASON & WORLD SERIES',
-    description: 'Follow Major League Baseball on MethStreams. Stream every pitch from opening day to the postseason pennant race with reliable backup feeds...',
+    subtitle: 'METHSTREAMS MLB BASEBALL | LIVE INNINGS, PENNANT RACE & WORLD SERIES',
+    description: 'Stream live MLB baseball games on MethStreams. Catch every home run from opening week through the postseason pennant chase and World Series...',
     badgeType: 'MLB',
     icon: '⚾'
   },
@@ -172,8 +172,8 @@ const CATEGORY_CARDS = [
     id: 'f1',
     targetSport: 'motor-sports',
     title: 'F1',
-    subtitle: 'METHSTREAMS FORMULA 1 | LIVE GRAND PRIX & QUALIFYING SESSIONS',
-    description: 'Catch high-speed Formula 1 racing on MethStreams. Stream practice, pole-position qualifying, and Grand Prix Sunday races in HD...',
+    subtitle: 'METHSTREAMS FORMULA 1 | GRAND PRIX RACING, PRACTICE & QUALIFYING',
+    description: 'Follow every Formula 1 Grand Prix on MethStreams. Watch practice sessions, pole qualifying shootouts, and Sunday race day coverage in vivid HD...',
     badgeType: 'F1',
     icon: '🏎️'
   },
@@ -181,8 +181,8 @@ const CATEGORY_CARDS = [
     id: 'wwe',
     targetSport: 'fight',
     title: 'WWE',
-    subtitle: 'METHSTREAMS WWE ENTERTAINMENT | RAW, SMACKDOWN & PREMIUM LIVE EVENTS',
-    description: 'Watch pro wrestling spectacles on MethStreams. Stream weekly Raw, SmackDown, and major monthly stadium events without subscriptions...',
+    subtitle: 'METHSTREAMS WWE STREAMS | MONDAY NIGHT RAW, SMACKDOWN & PLE SHOWS',
+    description: 'Tune into WWE wrestling entertainment on MethStreams. Stream weekly episodes of Raw, SmackDown, and major Premium Live Events without subscriptions...',
     badgeType: 'WWE',
     icon: '🤼'
   }
