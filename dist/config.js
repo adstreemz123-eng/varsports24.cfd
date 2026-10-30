@@ -11,23 +11,23 @@ const SITE_CONFIG = {
   // 1. Aapki Website Ka Naam
   siteName: "MethStreams",
 
-  // 2. Aapki Custom Domain (maslan: https://syairhk.cfd)
-  domain: "https://syairhk.cfd",
+  // 2. Aapki Custom Domain (maslan: https://gazinfonet.cfd)
+  domain: "https://gazinfonet.cfd",
 
   // 3. Discord Support Link
   discordUrl: "https://discord.gg/gmKmhVKF4G",
 
   // 4. Site Title (Browser Tab & Google Search Title - Max 60 chars for SEO)
-  title: "MethStreams - Watch Live NFL Broadcasts & Sports Streams",
+  title: "MethStreams - Free Live NFL Broadcasts & Sports Streams",
 
   // 5. Meta Description (Google Search Snippet - Max 160 chars)
-  description: "Watch live NFL broadcast games and HD sports streams on MethStreams. Instant game kickoff schedules, real-time scores, and fast feeds for NBA, UFC, and CFB.",
+  description: "Catch free live NFL broadcast games and sports in HD on MethStreams. Get instant kickoff schedules, real-time scores, and reliable feeds for NBA, UFC & CFB.",
 
   // 6. Social Share Image (OG Image)
-  ogImage: "https://syairhk.cfd/MethStreams-NFL-broadcast-map.png",
+  ogImage: "https://gazinfonet.cfd/MethStreams-NFL-broadcast-map.png",
 
   // 7. Primary SEO Keywords (1st: MethStreams, 2nd: NFL broadcast)
-  keywords: "MethStreams, NFL broadcast, free NFL broadcast, live NFL broadcast, methstreams nfl, NFL streams, MethStreams live, NBA streams, UFC streams, CFB streams, live sports schedules, syairhk.cfd"
+  keywords: "MethStreams, NFL broadcast, free NFL broadcast, live NFL broadcast, methstreams nfl, NFL streams, MethStreams live, NBA streams, UFC streams, CFB streams, live sports schedules, gazinfonet.cfd"
 };
 
 // Export for Node.js scripts if running in terminal

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://syairhk.cfd/sitemap.xml
+Sitemap: https://gazinfonet.cfd/sitemap.xml
