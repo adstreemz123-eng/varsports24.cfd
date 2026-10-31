@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://gazinfonet.cfd/sitemap.xml
+Sitemap: https://livelol.cfd/sitemap.xml
