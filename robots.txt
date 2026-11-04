@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://livelol.cfd/sitemap.xml
+Sitemap: https://newteeth.cfd/sitemap.xml
