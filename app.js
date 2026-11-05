@@ -109,8 +109,8 @@ const CATEGORY_CARDS = [
     id: 'nfl',
     targetSport: 'american-football',
     title: 'NFL',
-    subtitle: 'METHSTREAMS NFL BROADCAST | LIVE GAME PASS, REDZONE & SCORES',
-    description: 'Experience free NFL broadcast streams on MethStreams with zero buffering. Stream Sunday football, Thursday and Monday Night games, and RedZone in 1080p HD...',
+    subtitle: 'LIVE NFL BROADCAST | GRIDIRON PASS, REDZONE FEEDS & SCORES',
+    description: 'Enjoy free NFL broadcast feeds on MethStreams with pristine quality. Watch Sunday kickoffs, primetime rivalries, and live RedZone scores in full 1080p HD...',
     badgeType: 'NFL',
     icon: '🏈'
   },
@@ -118,8 +118,8 @@ const CATEGORY_CARDS = [
     id: 'soccer',
     targetSport: 'football',
     title: 'Soccer',
-    subtitle: 'METHSTREAMS SOCCER STREAMS | PREMIER LEAGUE, UCL & LA LIGA',
-    description: 'Catch high-octane live soccer streams on MethStreams. Watch the Premier League, UEFA Champions League, Serie A, and domestic knockout cups in fluid 60 FPS...',
+    subtitle: 'GLOBAL SOCCER STREAMS | PREMIER LEAGUE, UCL & TOP LEAGUES',
+    description: 'Stream responsive live soccer streams on MethStreams. Follow UEFA Champions League clashes, Premier League derbies, and international tournament action with zero lag...',
     badgeType: 'SOCCER',
     icon: '⚽'
   },
@@ -127,8 +127,8 @@ const CATEGORY_CARDS = [
     id: 'nba',
     targetSport: 'basketball',
     title: 'NBA',
-    subtitle: 'METHSTREAMS NBA BASKETBALL | REGULAR SEASON & PLAYOFF BATTLES',
-    description: 'Follow high-flying NBA basketball on MethStreams. Stream live tip-offs, fourth-quarter buzzer beaters, and championship playoff series in crystal clarity...',
+    subtitle: 'LIVE NBA BASKETBALL | REGULAR MATCHUPS & CHAMPIONSHIP SERIES',
+    description: 'Catch fast-paced NBA basketball on MethStreams with high frame rates. Stream court action, buzzer-beating thrillers, and postseason series without subscriptions...',
     badgeType: 'NBA',
     icon: '🏀'
   },
@@ -136,8 +136,8 @@ const CATEGORY_CARDS = [
     id: 'cfb',
     targetSport: 'american-football',
     title: 'CFB',
-    subtitle: 'METHSTREAMS COLLEGE FOOTBALL | NCAA SATURDAY CLASHES & BOWLS',
-    description: 'Watch pulse-racing NCAA college football on MethStreams. Stream SEC, Big Ten, Big 12 matchups, bowl games, and the College Football Playoff without fees...',
+    subtitle: 'COLLEGE FOOTBALL LIVE | NCAA SATURDAY SHOWDOWNS & BOWL GAMES',
+    description: 'Watch electrifying NCAA college football on MethStreams. Follow conference showdowns, bowl rivalries, and national championship chases with crisp audio...',
     badgeType: 'CFB',
     icon: '🏈'
   },
@@ -145,8 +145,8 @@ const CATEGORY_CARDS = [
     id: 'mma-boxing',
     targetSport: 'fight',
     title: 'UFC / Boxing',
-    subtitle: 'METHSTREAMS UFC & BOXING | PPV FIGHT NIGHTS & TITLE BOUTS',
-    description: 'Stream methstreams ufc fight cards and world championship boxing on MethStreams. Watch early prelims, main cards, and Pay-Per-View bouts with no blackout rules...',
+    subtitle: 'UFC FIGHT NIGHTS & BOXING | PPV MAIN CARDS & CHAMPIONSHIP BOUTS',
+    description: 'Stream methstreams ufc fight nights and marquee boxing events on MethStreams. Watch undercard brawls and Pay-Per-View title showdowns without regional blackout blocks...',
     badgeType: 'UFC-BOXING',
     icon: '🥊'
   },
@@ -154,8 +154,8 @@ const CATEGORY_CARDS = [
     id: 'nhl',
     targetSport: 'hockey',
     title: 'NHL',
-    subtitle: 'METHSTREAMS NHL HOCKEY | PUCK DROP STREAMS & PLAYOFF PURSUIT',
-    description: 'Catch live NHL hockey games on MethStreams. Stream thrilling power plays, sudden-death overtime, and Stanley Cup playoff games in ultra-smooth HD...',
+    subtitle: 'NHL HOCKEY BROADCAST | REGULAR PUCK DROPS & STANLEY CUP PURSUIT',
+    description: 'Tune into high-intensity NHL hockey on MethStreams. Enjoy uninterrupted power plays, overtime battles, and playoff runs in crystal-clear high definition...',
     badgeType: 'NHL',
     icon: '🏒'
   },
@@ -163,8 +163,8 @@ const CATEGORY_CARDS = [
     id: 'mlb',
     targetSport: 'baseball',
     title: 'MLB',
-    subtitle: 'METHSTREAMS BASEBALL LIVE | MLB REGULAR SEASON & POSTSEASON',
-    description: 'Follow Major League Baseball games on MethStreams. Stream every pitch, home run derby, and October postseason pennant race all the way to the World Series...',
+    subtitle: 'MLB BASEBALL FEEDS | REGULAR INNINGS & WORLD SERIES ACTION',
+    description: 'Catch live Major League Baseball action on MethStreams. Follow regular pennant races, bases-loaded jams, and World Series duels with reliable video streams...',
     badgeType: 'MLB',
     icon: '⚾'
   },
@@ -172,8 +172,8 @@ const CATEGORY_CARDS = [
     id: 'f1',
     targetSport: 'motor-sports',
     title: 'F1',
-    subtitle: 'METHSTREAMS FORMULA 1 | LIVE GRAND PRIX CIRCUITS & QUALIFYING',
-    description: 'Experience high-speed Formula 1 racing on MethStreams. Stream free practice, pole position qualifying, and Sunday Grand Prix action in vivid 1080p...',
+    subtitle: 'FORMULA 1 LIVE | CIRCUIT RACING, QUALIFYING & RACE DAY DRAMA',
+    description: 'Experience pulse-pounding Formula 1 Grand Prix racing on MethStreams. Watch free practice runs, qualifying battles, and full Sunday race days in sharp 1080p...',
     badgeType: 'F1',
     icon: '🏎️'
   },
@@ -181,8 +181,8 @@ const CATEGORY_CARDS = [
     id: 'wwe',
     targetSport: 'fight',
     title: 'WWE',
-    subtitle: 'METHSTREAMS WWE ENTERTAINMENT | RAW, SMACKDOWN & MAIN PLE SHOWS',
-    description: 'Watch pro wrestling drama on MethStreams. Stream weekly broadcasts of WWE Raw, SmackDown, and high-impact monthly Premium Live Events with zero subscription...',
+    subtitle: 'WWE LIVE ENTERTAINMENT | MONDAY RAW, SMACKDOWN & MAJOR PLE EVENTS',
+    description: 'Stream hard-hitting pro wrestling on MethStreams. Watch weekly WWE Raw and SmackDown telecasts alongside premier stadium PLE spectacles completely free...',
     badgeType: 'WWE',
     icon: '🤼'
   }
@@ -708,9 +708,10 @@ function mapAuraCategory(catName, leagueName) {
   if (c === 'nhl' || l.includes('nhl')) return { category: 'hockey', league: 'NHL' };
   if (c === 'mlb' || l.includes('mlb')) return { category: 'baseball', league: 'MLB' };
   if (c === 'nba' || l.includes('nba')) return { category: 'basketball', league: 'NBA' };
+  if (c === 'ncaab' || l.includes('ncaab') || l.includes('ncaam')) return { category: 'basketball', league: 'NCAA Basketball' };
   if (c === 'cfb' || l.includes('ncaaf') || l.includes('college')) return { category: 'american-football', league: 'NCAA Football' };
   if (c === 'nfl' || l.includes('nfl')) return { category: 'american-football', league: 'NFL' };
-  if (c.includes('serie') || c.includes('liga') || c.includes('soccer') || c.includes('premier') || c.includes('bundes') || l.includes('soccer')) {
+  if (c.includes('uefa') || c.includes('europa') || c.includes('conference') || c.includes('champions') || c.includes('serie') || c.includes('liga') || c.includes('soccer') || c.includes('premier') || c.includes('bundes') || c.includes('football') || l.includes('soccer') || l.includes('football') || l.includes('uefa')) {
     return { category: 'football', league: leagueName || 'Soccer' };
   }
   if (c.includes('fight') || c.includes('ufc') || c.includes('mma') || c.includes('box')) {
@@ -1170,10 +1171,16 @@ function renderCategoryMatches() {
 
   sportMatches.forEach(match => {
     const isLive = match.isLive || (match.date <= now && match.date >= minTime);
-    let timeStr = match.countdown || match.dateText;
-    if (!timeStr && match.date && match.date > 0) {
+    let timeStr = '';
+    if (isLive) {
+      timeStr = 'LIVE NOW';
+    } else if (match.date && match.date > 0) {
       const matchDate = new Date(match.date);
-      timeStr = matchDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const isToday = matchDate.toDateString() === new Date().toDateString();
+      timeStr = (isToday ? 'Today, ' : matchDate.toLocaleDateString([], { month: 'short', day: 'numeric' }) + ', ') +
+                matchDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    } else {
+      timeStr = match.countdown || 'Upcoming';
     }
 
     let statusHTML = '';
