@@ -18,10 +18,10 @@ const SITE_CONFIG = {
   discordUrl: "https://discord.gg/gmKmhVKF4G",
 
   // 4. Site Title (Browser Tab & Google Search Title - Max 60 chars for SEO)
-  title: "MethStreams - Free NFL Broadcast Feeds & Live Sports Online",
+  title: "MethStreams - Free NFL Broadcast Feeds & Live Sports Hub",
 
   // 5. Meta Description (Google Search Snippet - Max 160 chars)
-  description: "Catch live NFL broadcast games and free sports streaming in 1080p on MethStreams. Enjoy real-time scores, kickoff schedules, and HD streams for NBA, UFC & CFB.",
+  description: "Watch live NFL broadcast games & free sports streaming on MethStreams in 1080p. Track live scores, kickoff schedules, and HD video feeds for NBA, UFC & CFB.",
 
   // 6. Social Share Image (OG Image)
   ogImage: "https://indexlead.cfd/MethStreams-NFL-broadcast-map.png",
