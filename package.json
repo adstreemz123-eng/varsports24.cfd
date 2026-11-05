@@ -4,7 +4,7 @@
   "description": "MethStreams Live Sports Streaming Platform",
   "main": "index.html",
   "scripts": {
-    "build": "node update-domain.js newteeth.cfd && node build-dist.js",
+    "build": "node update-domain.js indexlead.cfd && node build-dist.js",
     "deploy": "wrangler deploy"
   },
   "keywords": [

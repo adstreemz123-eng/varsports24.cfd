@@ -11,23 +11,23 @@ const SITE_CONFIG = {
   // 1. Aapki Website Ka Naam
   siteName: "MethStreams",
 
-  // 2. Aapki Custom Domain (maslan: https://newteeth.cfd)
-  domain: "https://newteeth.cfd",
+  // 2. Aapki Custom Domain (maslan: https://indexlead.cfd)
+  domain: "https://indexlead.cfd",
 
   // 3. Discord Support Link
   discordUrl: "https://discord.gg/gmKmhVKF4G",
 
   // 4. Site Title (Browser Tab & Google Search Title - Max 60 chars for SEO)
-  title: "MethStreams - Free NFL Broadcasts & Live Sports Streaming",
+  title: "MethStreams - Free NFL Broadcast Feeds & Live Sports Online",
 
   // 5. Meta Description (Google Search Snippet - Max 160 chars)
-  description: "Enjoy live NFL broadcast games and sports in 1080p HD on MethStreams. Get instant kickoff updates, real-time box scores, and free feeds for NBA, UFC & CFB.",
+  description: "Catch live NFL broadcast games and free sports streaming in 1080p on MethStreams. Enjoy real-time scores, kickoff schedules, and HD streams for NBA, UFC & CFB.",
 
   // 6. Social Share Image (OG Image)
-  ogImage: "https://newteeth.cfd/MethStreams-NFL-broadcast-map.png",
+  ogImage: "https://indexlead.cfd/MethStreams-NFL-broadcast-map.png",
 
   // 7. Primary SEO Keywords (1st: MethStreams, 2nd: NFL broadcast)
-  keywords: "MethStreams, NFL broadcast, free NFL broadcast, live NFL broadcast, methstreams nfl, NFL streams, MethStreams live, NBA streams, UFC streams, CFB streams, live sports schedules, newteeth.cfd"
+  keywords: "MethStreams, NFL broadcast, free NFL broadcast, live NFL broadcast, methstreams nfl, NFL streams, MethStreams live, NBA streams, UFC streams, CFB streams, live sports schedules, indexlead.cfd"
 };
 
 // Export for Node.js scripts if running in terminal

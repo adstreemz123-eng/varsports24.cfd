@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://newteeth.cfd/sitemap.xml
+Sitemap: https://indexlead.cfd/sitemap.xml
