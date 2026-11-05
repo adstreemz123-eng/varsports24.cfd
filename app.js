@@ -699,32 +699,95 @@ function applySiteConfig() {
 }
 
 // ============================================================================
-// DATA FETCHING (PRIMARY: AURASPORTS, FALLBACK & MERGE: STREAMED.PK)
+// DATA FETCHING & UNIVERSAL CATEGORY ENGINE (PERMANENT UNIVERSAL MAPPING)
 // ============================================================================
 
-function mapAuraCategory(catName, leagueName) {
+let auraScheduleCache = null;
+let lastAuraFetchTime = 0;
+const CACHE_TTL_MS = 60 * 1000; // 60 seconds instant in-memory cache
+
+function mapAuraCategory(catName, leagueName, title = '') {
   const c = (catName || '').toLowerCase();
   const l = (leagueName || '').toLowerCase();
-  if (c === 'nhl' || l.includes('nhl')) return { category: 'hockey', league: 'NHL' };
-  if (c === 'mlb' || l.includes('mlb')) return { category: 'baseball', league: 'MLB' };
-  if (c === 'nba' || l.includes('nba')) return { category: 'basketball', league: 'NBA' };
-  if (c === 'ncaab' || l.includes('ncaab') || l.includes('ncaam')) return { category: 'basketball', league: 'NCAA Basketball' };
-  if (c === 'cfb' || l.includes('ncaaf') || l.includes('college')) return { category: 'american-football', league: 'NCAA Football' };
-  if (c === 'nfl' || l.includes('nfl')) return { category: 'american-football', league: 'NFL' };
-  if (c.includes('uefa') || c.includes('europa') || c.includes('conference') || c.includes('champions') || c.includes('serie') || c.includes('liga') || c.includes('soccer') || c.includes('premier') || c.includes('bundes') || c.includes('football') || l.includes('soccer') || l.includes('football') || l.includes('uefa')) {
-    return { category: 'football', league: leagueName || 'Soccer' };
+  const t = (title || '').toLowerCase();
+  const combined = `${c} ${l} ${t}`;
+
+  // 1. Pro Wrestling / WWE
+  if (combined.includes('wwe') || combined.includes('aew') || combined.includes('wrestling') || 
+      combined.includes('smackdown') || combined.includes('raw') || combined.includes('wrestlemania') || 
+      combined.includes('nxt') || combined.includes('summerslam')) {
+    return { category: 'fight', isWwe: true, league: leagueName || 'WWE' };
   }
-  if (c.includes('fight') || c.includes('ufc') || c.includes('mma') || c.includes('box')) {
-    return { category: 'fight', league: leagueName || 'Combat' };
+
+  // 2. American Football (NFL vs CFB)
+  const isAmericanFoot = combined.includes('american-football') || combined.includes('nfl') || 
+                         combined.includes('cfb') || combined.includes('ncaaf') || 
+                         combined.includes('super bowl') || combined.includes('ufl') || 
+                         combined.includes('cfl') || combined.includes('gridiron');
+  if (isAmericanFoot) {
+    const isCollege = combined.includes('cfb') || combined.includes('ncaaf') || combined.includes('college');
+    return {
+      category: 'american-football',
+      isCollege: isCollege,
+      isWwe: false,
+      league: isCollege ? (leagueName || 'NCAA Football') : (leagueName || 'NFL')
+    };
   }
-  if (c.includes('f1') || c.includes('motor')) {
+
+  // 3. Hockey (NHL)
+  if (combined.includes('hockey') || combined.includes('nhl') || combined.includes('khl') || 
+      combined.includes('ahl') || combined.includes('shl') || combined.includes('stanley')) {
+    return { category: 'hockey', league: leagueName || 'NHL' };
+  }
+
+  // 4. Baseball (MLB)
+  if (combined.includes('baseball') || combined.includes('mlb') || combined.includes('npb') || 
+      combined.includes('kbo') || combined.includes('world series')) {
+    return { category: 'baseball', league: leagueName || 'MLB' };
+  }
+
+  // 5. Basketball (NBA & NCAA Basketball & EuroLeague)
+  if (combined.includes('basketball') || combined.includes('nba') || combined.includes('ncaab') || 
+      combined.includes('ncaam') || combined.includes('wnba') || combined.includes('euroleague') || 
+      combined.includes('fiba') || combined.includes('cbb')) {
+    return { category: 'basketball', league: leagueName || 'Basketball' };
+  }
+
+  // 6. Combat / UFC / MMA / Boxing
+  if (combined.includes('ufc') || combined.includes('mma') || combined.includes('boxing') || 
+      combined.includes('fight') || combined.includes('bellator') || combined.includes('pfl') || 
+      combined.includes('one championship') || combined.includes('bkfc') || combined.includes('glory')) {
+    return { category: 'fight', isWwe: false, league: leagueName || 'Combat' };
+  }
+
+  // 7. Motorsports / F1
+  if (combined.includes('f1') || combined.includes('formula') || combined.includes('motogp') || 
+      combined.includes('nascar') || combined.includes('indycar') || combined.includes('motor') || 
+      combined.includes('rally') || combined.includes('grand prix')) {
     return { category: 'motor-sports', league: leagueName || 'Motorsport' };
   }
+
+  // 8. Soccer (Worldwide Football, Tournaments & Domestic Leagues)
+  const isSoccer = combined.includes('uefa') || combined.includes('europa') || combined.includes('conference') || 
+                   combined.includes('champions') || combined.includes('serie') || combined.includes('liga') || 
+                   combined.includes('soccer') || combined.includes('premier') || combined.includes('bundes') || 
+                   combined.includes('football') || combined.includes('copa') || combined.includes('cup') || 
+                   combined.includes('mls') || combined.includes('fifa') || combined.includes('ligue') || 
+                   combined.includes('conmebol') || combined.includes('libertadores') || combined.includes('afcon') || 
+                   combined.includes('fa cup') || combined.includes('carabao') || combined.includes('eredivisie') || 
+                   combined.includes('brasileir') || combined.includes('saudi') || combined.includes('super lig') || 
+                   combined.includes('concacaf') || combined.includes('primeira') || combined.includes('championship') || 
+                   combined.includes('efl') || combined.includes('scottish') || combined.includes('friendly') || 
+                   combined.includes('division');
+  if (isSoccer) {
+    return { category: 'football', league: leagueName || 'Soccer' };
+  }
+
   return { category: c || 'other', league: leagueName || '' };
 }
 
 function normalizeAuraMatch(item, groupCatName) {
-  const mapped = mapAuraCategory(item.category || groupCatName, item.league_name);
+  const mapped = mapAuraCategory(item.category || groupCatName, item.league_name, item.title);
 
   let sources = [];
   if (Array.isArray(item.sources) && item.sources.length > 0) {
@@ -757,6 +820,8 @@ function normalizeAuraMatch(item, groupCatName) {
     dateIso: item.date_iso,
     status: item.status,
     isLive: item.status === 'live',
+    isCollege: mapped.isCollege || false,
+    isWwe: mapped.isWwe || false,
     sources: sources,
     iframeUrl: item.iframeUrl || item.watchUrl,
     embedCode: item.embedCode,
@@ -764,15 +829,20 @@ function normalizeAuraMatch(item, groupCatName) {
   };
 }
 
-async function fetchAuraSchedule() {
+async function fetchAuraSchedule(forceRefresh = false) {
+  const now = Date.now();
+  if (!forceRefresh && auraScheduleCache && (now - lastAuraFetchTime < CACHE_TTL_MS)) {
+    return auraScheduleCache;
+  }
+
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 8000);
+    const timeoutId = setTimeout(() => controller.abort(), 6000);
     const res = await fetch(AURA_API_BASE, { signal: controller.signal });
     clearTimeout(timeoutId);
     if (!res.ok) throw new Error(`AuraSports HTTP ${res.status}`);
     const data = await res.json();
-    if (!Array.isArray(data)) return null;
+    if (!Array.isArray(data)) return auraScheduleCache || null;
 
     const matches = [];
     data.forEach(group => {
@@ -782,10 +852,13 @@ async function fetchAuraSchedule() {
         matches.push(normalizeAuraMatch(item, groupCat));
       });
     });
+
+    auraScheduleCache = matches;
+    lastAuraFetchTime = Date.now();
     return matches;
   } catch (err) {
     console.warn('[API] AuraSports primary failed or timed out:', err);
-    return null;
+    return auraScheduleCache || null;
   }
 }
 
