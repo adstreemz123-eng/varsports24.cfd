@@ -31,6 +31,14 @@ const LEAGUE_BADGES = {
     <ellipse cx="6" cy="17" rx="2.5" ry="2.5" fill="#FFFFFF"/>
   </svg>`,
 
+  'NCAAB': `<svg viewBox="0 0 32 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16 1.5L3.5 5.8v15c0 9.8 12.5 15.2 12.5 15.2s12.5-5.4 12.5-15.2V5.8L16 1.5z" fill="#0b2341" stroke="#ffffff" stroke-width="1.2"/>
+    <path d="M5.5 17c2.5 0 10.5-1.8 10.5-1.8s8 1.8 10.5 1.8v3.5c0 7.8-10.5 12.5-10.5 12.5S5.5 28.3 5.5 20.5V17z" fill="#00539c"/>
+    <text x="16" y="27" font-family="'Outfit', sans-serif" font-weight="900" font-size="6.2" fill="#ffffff" text-anchor="middle" letter-spacing="-0.2">NCAA</text>
+    <circle cx="16" cy="10" r="3" fill="#e87722"/>
+    <line x1="13.5" y1="10" x2="18.5" y2="10" stroke="#ffffff" stroke-width="0.7"/>
+  </svg>`,
+
   'CFB': `<svg viewBox="0 0 32 38" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M16 1.5L3.5 5.8v15c0 9.8 12.5 15.2 12.5 15.2s12.5-5.4 12.5-15.2V5.8L16 1.5z" fill="#002b49" stroke="#ffffff" stroke-width="1.2"/>
     <path d="M5.5 17c2.5 0 10.5-1.8 10.5-1.8s8 1.8 10.5 1.8v3.5c0 7.8-10.5 12.5-10.5 12.5S5.5 28.3 5.5 20.5V17z" fill="#b31b1b"/>
@@ -109,8 +117,8 @@ const CATEGORY_CARDS = [
     id: 'nfl',
     targetSport: 'american-football',
     title: 'NFL',
-    subtitle: 'LIVE NFL BROADCAST | GRIDIRON PASS, REDZONE FEEDS & SCORES',
-    description: 'Enjoy free NFL broadcast feeds on MethStreams with pristine quality. Watch Sunday kickoffs, primetime rivalries, and live RedZone scores in full 1080p HD...',
+    subtitle: 'LIVE NFL BROADCAST | GRIDIRON PASS, GAME PASS & TOUCHDOWN REDZONE',
+    description: 'Follow high-octane NFL broadcast games on MethStreams in razor-sharp 1080p. Watch Sunday afternoon football, primetime showdowns, and live RedZone scores without cable fees...',
     badgeType: 'NFL',
     icon: '🏈'
   },
@@ -118,26 +126,26 @@ const CATEGORY_CARDS = [
     id: 'soccer',
     targetSport: 'football',
     title: 'Soccer',
-    subtitle: 'GLOBAL SOCCER STREAMS | PREMIER LEAGUE, UCL & TOP LEAGUES',
-    description: 'Stream responsive live soccer streams on MethStreams. Follow UEFA Champions League clashes, Premier League derbies, and international tournament action with zero lag...',
+    subtitle: 'GLOBAL SOCCER STREAMS | PREMIER LEAGUE, CHAMPIONS LEAGUE & DERBIES',
+    description: 'Access uninterrupted live soccer streams on MethStreams for every major league. Follow UEFA Champions League thrillers, Premier League derbies, and top domestic cups with zero lag...',
     badgeType: 'SOCCER',
     icon: '⚽'
   },
   {
     id: 'nba',
     targetSport: 'basketball',
-    title: 'NBA',
-    subtitle: 'LIVE NBA BASKETBALL | REGULAR MATCHUPS & CHAMPIONSHIP SERIES',
-    description: 'Catch fast-paced NBA basketball on MethStreams with high frame rates. Stream court action, buzzer-beating thrillers, and postseason series without subscriptions...',
+    title: 'NBA / NCAAB',
+    subtitle: 'LIVE NBA & NCAAB BASKETBALL | PRO HOOPS & MARCH MADNESS DRAMA',
+    description: 'Experience fast-paced NBA matchups and NCAA college basketball on MethStreams. Stream high-flying court duels, buzzer-beaters, and postseason brackets with smooth 60 FPS motion...',
     badgeType: 'NBA',
     icon: '🏀'
   },
   {
     id: 'cfb',
     targetSport: 'american-football',
-    title: 'CFB',
-    subtitle: 'COLLEGE FOOTBALL LIVE | NCAA SATURDAY SHOWDOWNS & BOWL GAMES',
-    description: 'Watch electrifying NCAA college football on MethStreams. Follow conference showdowns, bowl rivalries, and national championship chases with crisp audio...',
+    title: 'CFB / NCAA',
+    subtitle: 'COLLEGE FOOTBALL BROADCAST | NCAA GAME DAY & SATURDAY BOWL GAMES',
+    description: 'Stream electrifying NCAA college football action on MethStreams. Catch conference rivalries, Saturday game-day telecasts, and national championship playoff chases with crystal audio...',
     badgeType: 'CFB',
     icon: '🏈'
   },
@@ -145,8 +153,8 @@ const CATEGORY_CARDS = [
     id: 'mma-boxing',
     targetSport: 'fight',
     title: 'UFC / Boxing',
-    subtitle: 'UFC FIGHT NIGHTS & BOXING | PPV MAIN CARDS & CHAMPIONSHIP BOUTS',
-    description: 'Stream methstreams ufc fight nights and marquee boxing events on MethStreams. Watch undercard brawls and Pay-Per-View title showdowns without regional blackout blocks...',
+    subtitle: 'METHSTREAMS UFC & FIGHT NIGHTS | PPV MAIN CARDS & CHAMPIONSHIP FIGHTS',
+    description: 'Tune into methstreams ufc fight cards and world title boxing events on MethStreams. Watch undercard wars and Pay-Per-View championship bouts without blackout restrictions...',
     badgeType: 'UFC-BOXING',
     icon: '🥊'
   },
@@ -154,8 +162,8 @@ const CATEGORY_CARDS = [
     id: 'nhl',
     targetSport: 'hockey',
     title: 'NHL',
-    subtitle: 'NHL HOCKEY BROADCAST | REGULAR PUCK DROPS & STANLEY CUP PURSUIT',
-    description: 'Tune into high-intensity NHL hockey on MethStreams. Enjoy uninterrupted power plays, overtime battles, and playoff runs in crystal-clear high definition...',
+    subtitle: 'NHL HOCKEY BROADCAST | POWER PLAYS, PUCK DROPS & STANLEY CUP PURSUIT',
+    description: 'Watch rapid-fire NHL hockey action on MethStreams in vivid high definition. Stream sudden-death overtime battles, breakaways, and postseason trophy runs with uninterrupted feeds...',
     badgeType: 'NHL',
     icon: '🏒'
   },
@@ -163,8 +171,8 @@ const CATEGORY_CARDS = [
     id: 'mlb',
     targetSport: 'baseball',
     title: 'MLB',
-    subtitle: 'MLB BASEBALL FEEDS | REGULAR INNINGS & WORLD SERIES ACTION',
-    description: 'Catch live Major League Baseball action on MethStreams. Follow regular pennant races, bases-loaded jams, and World Series duels with reliable video streams...',
+    subtitle: 'MLB BASEBALL FEEDS | REGULAR PENNANT RACES & OCTOBER WORLD SERIES',
+    description: 'Enjoy live Major League Baseball broadcasts on MethStreams all season long. Stream pitching duels, walk-off home runs, and the Fall Classic World Series with dependable video...',
     badgeType: 'MLB',
     icon: '⚾'
   },
@@ -172,8 +180,8 @@ const CATEGORY_CARDS = [
     id: 'f1',
     targetSport: 'motor-sports',
     title: 'F1',
-    subtitle: 'FORMULA 1 LIVE | CIRCUIT RACING, QUALIFYING & RACE DAY DRAMA',
-    description: 'Experience pulse-pounding Formula 1 Grand Prix racing on MethStreams. Watch free practice runs, qualifying battles, and full Sunday race days in sharp 1080p...',
+    subtitle: 'FORMULA 1 MOTORSPORTS | GRAND PRIX CIRCUITS & RACE DAY POLE POSITION',
+    description: 'Catch high-speed Formula 1 Grand Prix racing weekends on MethStreams. Watch live practice laps, qualifying grid battles, and lights-out Sunday race days in pristine 1080p HD...',
     badgeType: 'F1',
     icon: '🏎️'
   },
@@ -181,8 +189,8 @@ const CATEGORY_CARDS = [
     id: 'wwe',
     targetSport: 'fight',
     title: 'WWE',
-    subtitle: 'WWE LIVE ENTERTAINMENT | MONDAY RAW, SMACKDOWN & MAJOR PLE EVENTS',
-    description: 'Stream hard-hitting pro wrestling on MethStreams. Watch weekly WWE Raw and SmackDown telecasts alongside premier stadium PLE spectacles completely free...',
+    subtitle: 'WWE PRO WRESTLING | MONDAY NIGHT RAW, SMACKDOWN & MAJOR PLE EVENTS',
+    description: 'Stream dynamic professional wrestling spectacles on MethStreams completely free. Watch weekly telecasts of WWE Raw and SmackDown alongside mega-stadium Premium Live Events...',
     badgeType: 'WWE',
     icon: '🤼'
   }
@@ -193,6 +201,16 @@ CATEGORY_CARDS.forEach(c => {
   CATEGORY_MAP[c.id] = c;
 });
 // Aliases for complete backwards-compatibility
+if (CATEGORY_MAP['nba']) {
+  CATEGORY_MAP['ncaab'] = CATEGORY_MAP['nba'];
+  CATEGORY_MAP['nba-ncaab'] = CATEGORY_MAP['nba'];
+  CATEGORY_MAP['cbb'] = CATEGORY_MAP['nba'];
+}
+if (CATEGORY_MAP['cfb']) {
+  CATEGORY_MAP['ncaa'] = CATEGORY_MAP['cfb'];
+  CATEGORY_MAP['cfb-ncaa'] = CATEGORY_MAP['cfb'];
+  CATEGORY_MAP['ncaaf'] = CATEGORY_MAP['cfb'];
+}
 if (CATEGORY_MAP['mma-boxing']) {
   CATEGORY_MAP['mma'] = CATEGORY_MAP['mma-boxing'];
   CATEGORY_MAP['boxing'] = CATEGORY_MAP['mma-boxing'];
@@ -293,48 +311,100 @@ const FEATURED_CATEGORY_FIXTURES = {
   'nba': [
     {
       id: 'ft-nba-1',
+      title: 'Orlando Magic at Phoenix Suns',
+      dateText: 'Tonight, 02:00 AM',
+      countdown: '02:00 AM',
+      isLive: false,
+      isCollege: false,
+      league: 'NBA',
+      category: 'basketball',
+      sources: [{ source: 'golf', id: '2151' }]
+    },
+    {
+      id: 'ft-nba-2',
+      title: 'Miami Heat at Golden State Warriors',
+      dateText: 'Tonight, 03:00 AM',
+      countdown: '03:00 AM',
+      isLive: false,
+      isCollege: false,
+      league: 'NBA',
+      category: 'basketball',
+      sources: [{ source: 'golf', id: '2152' }]
+    },
+    {
+      id: 'ft-nba-3',
       title: 'Boston Celtics vs Detroit Pistons',
       dateText: 'Tonight, 07:30 PM',
       countdown: 'LIVE NOW',
       isLive: true,
-      category: 'basketball',
-      sources: [{ source: 'golf', id: '2386' }]
-    },
-    {
-      id: 'ft-nba-2',
-      title: 'Los Angeles Lakers vs Golden State Warriors',
-      dateText: 'Tonight, 10:00 PM',
-      countdown: '2h 15m 0s',
-      isLive: false,
-      category: 'basketball',
-      sources: [{ source: 'golf', id: '2386' }]
-    },
-    {
-      id: 'ft-nba-3',
-      title: 'Denver Nuggets vs Dallas Mavericks',
-      dateText: 'Tomorrow, 08:00 PM',
-      countdown: '18h 40m',
-      isLive: false,
+      isCollege: false,
+      league: 'NBA',
       category: 'basketball',
       sources: [{ source: 'golf', id: '2386' }]
     },
     {
       id: 'ft-nba-4',
-      title: 'Miami Heat vs Milwaukee Bucks',
-      dateText: 'Tomorrow, 09:30 PM',
-      countdown: '20h 10m',
-      isLive: false,
+      title: 'Wake Forest Demon Deacons at Vanderbilt Commodores',
+      dateText: 'Tonight, 11:00 PM',
+      countdown: 'LIVE NOW',
+      isLive: true,
+      isCollege: true,
+      league: 'NCAAB',
       category: 'basketball',
-      sources: [{ source: 'golf', id: '2386' }]
+      sources: [{ source: 'golf', id: '2251' }]
+    },
+    {
+      id: 'ft-nba-5',
+      title: 'Coastal Carolina Chanticleers at Duke Blue Devils',
+      dateText: 'Tonight, 01:00 AM',
+      countdown: '01:00 AM',
+      isLive: false,
+      isCollege: true,
+      league: 'NCAAB',
+      category: 'basketball',
+      sources: [{ source: 'golf', id: '2253' }]
+    },
+    {
+      id: 'ft-nba-6',
+      title: 'Chattanooga Mocs at Penn State Nittany Lions',
+      dateText: 'Tonight, 11:00 PM',
+      countdown: '11:00 PM',
+      isLive: false,
+      isCollege: true,
+      league: 'NCAAB',
+      sources: [{ source: 'golf', id: '2264' }]
+    },
+    {
+      id: 'ft-nba-7',
+      title: 'Pennsylvania Quakers at Illinois Fighting Illini',
+      dateText: 'Tonight, 01:30 AM',
+      countdown: '01:30 AM',
+      isLive: false,
+      isCollege: true,
+      league: 'NCAAB',
+      sources: [{ source: 'golf', id: '2256' }]
     }
   ],
   'cfb': [
     {
       id: 'ft-cfb-1',
+      title: 'UTSA Roadrunners at Florida Atlantic Owls',
+      dateText: 'Tonight, 12:30 AM',
+      countdown: 'LIVE NOW',
+      isLive: true,
+      isCollege: true,
+      league: 'CFB / NCAA',
+      category: 'american-football',
+      sources: [{ source: 'golf', id: '2177' }]
+    },
+    {
+      id: 'ft-cfb-2',
       title: 'Florida Intl Panthers vs Middle Tennessee Blue Raiders',
       dateText: 'Today, 08:00 PM',
       countdown: 'LIVE NOW',
       isLive: true,
+      isCollege: true,
+      league: 'CFB / NCAA',
       category: 'american-football',
       sources: [{ source: 'golf', id: '2359' }]
     },
@@ -593,6 +663,15 @@ FEATURED_CATEGORY_FIXTURES['mma'] = FEATURED_CATEGORY_FIXTURES['mma-boxing'];
 FEATURED_CATEGORY_FIXTURES['boxing'] = FEATURED_CATEGORY_FIXTURES['mma-boxing'];
 FEATURED_CATEGORY_FIXTURES['ufc'] = FEATURED_CATEGORY_FIXTURES['mma-boxing'];
 FEATURED_CATEGORY_FIXTURES['ufc-boxing'] = FEATURED_CATEGORY_FIXTURES['mma-boxing'];
+FEATURED_CATEGORY_FIXTURES['ncaab'] = FEATURED_CATEGORY_FIXTURES['nba'];
+FEATURED_CATEGORY_FIXTURES['nba-ncaab'] = FEATURED_CATEGORY_FIXTURES['nba'];
+FEATURED_CATEGORY_FIXTURES['ncaa'] = FEATURED_CATEGORY_FIXTURES['cfb'];
+FEATURED_CATEGORY_FIXTURES['cfb-ncaa'] = FEATURED_CATEGORY_FIXTURES['cfb'];
+
+// Schedule Cache & Timestamp
+let auraScheduleCache = null;
+let lastAuraFetchTime = 0;
+const CACHE_TTL_MS = 25 * 1000; // 25 seconds fast background sync
 
 // Application State
 const state = {
@@ -604,6 +683,19 @@ const state = {
   activeStreams: [],
   selectedStreamIndex: 0
 };
+
+// Immediate instant hydration from localStorage cache so live matches show instantly without waiting
+try {
+  const localCached = localStorage.getItem('aura_matches_cache_v2');
+  if (localCached) {
+    const parsed = JSON.parse(localCached);
+    if (parsed && Array.isArray(parsed.matches) && parsed.matches.length > 0) {
+      state.matches = parsed.matches;
+      auraScheduleCache = parsed.matches;
+      lastAuraFetchTime = parsed.time || 0;
+    }
+  }
+} catch (e) {}
 
 // DOM Elements Dynamic Proxy (Always gets fresh elements from live DOM, never null)
 const elements = new Proxy({}, {
@@ -661,13 +753,13 @@ async function initApp() {
   renderSportsGrid();
   renderDrawerSports();
   
-  // Load live matches from API in background without delaying user clicks
-  loadMatches();
+  // Load live matches from API in background immediately
+  loadMatches(state.matches.length === 0, true);
 
-  // Auto-refresh match data every 60s
+  // Auto-refresh match data every 30s silently in background (auto-removes ended matches & adds new matches)
   setInterval(() => {
-    loadMatches(false);
-  }, 60000);
+    loadMatches(false, true);
+  }, 30000);
 }
 
 function applySiteConfig() {
@@ -702,10 +794,6 @@ function applySiteConfig() {
 // DATA FETCHING & UNIVERSAL CATEGORY ENGINE (PERMANENT UNIVERSAL MAPPING)
 // ============================================================================
 
-let auraScheduleCache = null;
-let lastAuraFetchTime = 0;
-const CACHE_TTL_MS = 60 * 1000; // 60 seconds instant in-memory cache
-
 function mapAuraCategory(catName, leagueName, title = '') {
   const c = (catName || '').toLowerCase();
   const l = (leagueName || '').toLowerCase();
@@ -719,18 +807,19 @@ function mapAuraCategory(catName, leagueName, title = '') {
     return { category: 'fight', isWwe: true, league: leagueName || 'WWE' };
   }
 
-  // 2. American Football (NFL vs CFB)
+  // 2. American Football (NFL vs CFB / NCAA)
   const isAmericanFoot = combined.includes('american-football') || combined.includes('nfl') || 
                          combined.includes('cfb') || combined.includes('ncaaf') || 
                          combined.includes('super bowl') || combined.includes('ufl') || 
                          combined.includes('cfl') || combined.includes('gridiron');
   if (isAmericanFoot) {
-    const isCollege = combined.includes('cfb') || combined.includes('ncaaf') || combined.includes('college');
+    const isCollege = combined.includes('cfb') || combined.includes('ncaaf') || combined.includes('college') || combined.includes('ncaa');
     return {
       category: 'american-football',
       isCollege: isCollege,
+      isNfl: !isCollege,
       isWwe: false,
-      league: isCollege ? (leagueName || 'NCAA Football') : (leagueName || 'NFL')
+      league: isCollege ? (leagueName || 'CFB / NCAA') : (leagueName || 'NFL')
     };
   }
 
@@ -746,11 +835,17 @@ function mapAuraCategory(catName, leagueName, title = '') {
     return { category: 'baseball', league: leagueName || 'MLB' };
   }
 
-  // 5. Basketball (NBA & NCAA Basketball & EuroLeague)
+  // 5. Basketball (NBA & NCAA Basketball / NCAAB)
   if (combined.includes('basketball') || combined.includes('nba') || combined.includes('ncaab') || 
       combined.includes('ncaam') || combined.includes('wnba') || combined.includes('euroleague') || 
       combined.includes('fiba') || combined.includes('cbb')) {
-    return { category: 'basketball', league: leagueName || 'Basketball' };
+    const isCollege = combined.includes('ncaab') || combined.includes('ncaam') || combined.includes('cbb') || combined.includes('ncaa') || combined.includes('college');
+    return {
+      category: 'basketball',
+      isCollege: isCollege,
+      isNba: !isCollege,
+      league: isCollege ? 'NCAAB' : (leagueName || 'NBA')
+    };
   }
 
   // 6. Combat / UFC / MMA / Boxing
@@ -821,6 +916,9 @@ function normalizeAuraMatch(item, groupCatName) {
     status: item.status,
     isLive: item.status === 'live',
     isCollege: mapped.isCollege || false,
+    isNba: mapped.isNba || false,
+    isNfl: mapped.isNfl || false,
+    rawCategory: item.category || groupCatName,
     isWwe: mapped.isWwe || false,
     sources: sources,
     iframeUrl: item.iframeUrl || item.watchUrl,
@@ -837,8 +935,10 @@ async function fetchAuraSchedule(forceRefresh = false) {
 
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 6000);
-    const res = await fetch(AURA_API_BASE, { signal: controller.signal });
+    const timeoutId = setTimeout(() => controller.abort(), 7000);
+    // Cache-busting query param ensures browsers never serve stale cached schedules
+    const url = `${AURA_API_BASE}?_t=${now}`;
+    const res = await fetch(url, { signal: controller.signal, cache: 'no-store' });
     clearTimeout(timeoutId);
     if (!res.ok) throw new Error(`AuraSports HTTP ${res.status}`);
     const data = await res.json();
@@ -855,21 +955,30 @@ async function fetchAuraSchedule(forceRefresh = false) {
 
     auraScheduleCache = matches;
     lastAuraFetchTime = Date.now();
+    try {
+      localStorage.setItem('aura_matches_cache_v2', JSON.stringify({
+        time: lastAuraFetchTime,
+        matches: matches
+      }));
+    } catch (e) {}
+
     return matches;
   } catch (err) {
-    console.warn('[API] AuraSports primary failed or timed out:', err);
+    console.warn('[API] AuraSports primary fetch note:', err.message || err);
     return auraScheduleCache || null;
   }
 }
 
-async function loadMatches(showLoader = true) {
-  if (showLoader && elements.matchesLoading) {
+async function loadMatches(showLoader = true, forceRefresh = false) {
+  if (showLoader && elements.matchesLoading && state.matches.length === 0) {
     elements.matchesLoading.classList.remove('hidden');
   }
 
   try {
-    const auraMatches = await fetchAuraSchedule();
-    state.matches = (auraMatches && auraMatches.length > 0) ? auraMatches : [];
+    const auraMatches = await fetchAuraSchedule(forceRefresh);
+    if (auraMatches && auraMatches.length > 0) {
+      state.matches = auraMatches;
+    }
 
     // Re-render current view with fresh data
     renderSportsGrid();
@@ -891,7 +1000,7 @@ async function loadMatches(showLoader = true) {
   } catch (err) {
     console.error('Error in loadMatches:', err);
   } finally {
-    if (showLoader && elements.matchesLoading) {
+    if (elements.matchesLoading) {
       elements.matchesLoading.classList.add('hidden');
     }
   }
@@ -1154,6 +1263,8 @@ function showCategoryMatchesView(catId) {
   });
 
   renderCategoryMatches();
+  // Silently check API for freshest matches whenever category is opened
+  loadMatches(false, true);
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
@@ -1173,12 +1284,15 @@ function renderCategoryMatches() {
     // Specific category mapping logic
     if (cardData.id === 'cfb') {
       const isFootball = (m.category === 'american-football');
-      const isCollege = (m.title || '').toLowerCase().includes('cfb') || (m.title || '').toLowerCase().includes('ncaa') || (m.league || '').toLowerCase().includes('ncaa') || (m.league || '').toLowerCase().includes('college');
+      const isCollege = m.isCollege || (m.title || '').toLowerCase().includes('cfb') || (m.title || '').toLowerCase().includes('ncaa') || (m.league || '').toLowerCase().includes('ncaa') || (m.league || '').toLowerCase().includes('college');
       if (!isFootball || !isCollege) return false;
     } else if (cardData.id === 'nfl') {
       const isFootball = (m.category === 'american-football');
-      const isCollege = (m.title || '').toLowerCase().includes('cfb') || (m.title || '').toLowerCase().includes('ncaa') || (m.league || '').toLowerCase().includes('ncaa') || (m.league || '').toLowerCase().includes('college');
+      const isCollege = m.isCollege || (m.title || '').toLowerCase().includes('cfb') || (m.title || '').toLowerCase().includes('ncaa') || (m.league || '').toLowerCase().includes('ncaa') || (m.league || '').toLowerCase().includes('college');
       if (!isFootball || isCollege) return false;
+    } else if (cardData.id === 'nba') {
+      const isBasketball = (m.category === 'basketball');
+      if (!isBasketball) return false;
     } else if (cardData.id === 'wwe') {
       const isCombat = (m.category === 'fight');
       const isWwe = (m.title || '').toLowerCase().includes('wwe') || (m.title || '').toLowerCase().includes('wrestling');
@@ -1193,40 +1307,64 @@ function renderCategoryMatches() {
 
     // Filter by live/upcoming
     if (state.currentFilter === 'live') {
-      const isLive = m.date <= now && m.date >= minTime;
+      const isLive = m.isLive || (m.date <= now && m.date >= minTime);
       if (!isLive) return false;
     } else if (state.currentFilter === 'upcoming') {
       const isUpcoming = m.date > now;
       if (!isUpcoming) return false;
     }
 
-    // Filter by search query
+    // Filter by search query (including league, college keywords & teams)
     if (query) {
       const title = (m.title || '').toLowerCase();
       const teams = `${m.teams?.home?.name || ''} ${m.teams?.away?.name || ''}`.toLowerCase();
-      return title.includes(query) || teams.includes(query);
+      const league = (m.league || '').toLowerCase();
+      const cat = (m.category || '').toLowerCase();
+      const rawCat = (m.rawCategory || '').toLowerCase();
+      const isCollegeMatch = m.isCollege ? 'ncaa ncaab college' : 'nba pro';
+      return title.includes(query) || teams.includes(query) || league.includes(query) || cat.includes(query) || rawCat.includes(query) || isCollegeMatch.includes(query);
     }
 
     return true;
   });
 
-  // Fallback: If 0 fixtures found in API, load authentic featured category fixtures so NO card is ever empty!
-  if (sportMatches.length === 0 && !query) {
-    const featured = FEATURED_CATEGORY_FIXTURES[cardData.id] || [];
-    sportMatches = featured.map((f, i) => ({
-      id: f.id,
-      title: f.title,
-      category: f.category || targetSport,
-      date: f.isLive ? (now - 1000) : (now + (i + 1) * 3600000),
-      dateText: f.dateText,
-      countdown: f.countdown,
-      isLive: f.isLive,
-      sources: f.sources || [{ source: 'golf', id: '2316' }]
-    }));
+  // If API is still loading initial schedule, display loading spinner
+  if (state.matches.length === 0) {
+    if (elements.matchesLoading) elements.matchesLoading.classList.remove('hidden');
+    if (elements.emptyState) elements.emptyState.classList.add('hidden');
+    return;
   }
+  if (elements.matchesLoading) elements.matchesLoading.classList.add('hidden');
 
-  // Sort: live first, then ascending by time
+  // If no matches for current category in API, show clean empty state instead of old static fixtures
+  if (sportMatches.length === 0) {
+    if (elements.emptyState) {
+      elements.emptyState.classList.remove('hidden');
+      const emptyTitle = document.getElementById('empty-title');
+      const emptyDesc = document.getElementById('empty-desc');
+      if (emptyTitle) emptyTitle.textContent = `No ${cardData.title} Games Scheduled`;
+      if (emptyDesc) emptyDesc.textContent = `There are no live games scheduled right now for ${cardData.title}. New matches will appear automatically as soon as they are added to the schedule.`;
+    }
+    return;
+  }
+  if (elements.emptyState) elements.emptyState.classList.add('hidden');
+
+  // Sort: User requested exact ordering:
+  // For 'nba' (NBA / NCAAB): First NBA matches, then NCAAB matches
+  // For 'cfb' (CFB / NCAA): First CFB matches, then general NCAA matches
   sportMatches.sort((a, b) => {
+    if (cardData.id === 'nba') {
+      const aIsCollege = a.isCollege || (a.league || '').toLowerCase().includes('ncaa') || (a.rawCategory || '').toLowerCase() === 'ncaab';
+      const bIsCollege = b.isCollege || (b.league || '').toLowerCase().includes('ncaa') || (b.rawCategory || '').toLowerCase() === 'ncaab';
+      if (!aIsCollege && bIsCollege) return -1; // NBA matches first!
+      if (aIsCollege && !bIsCollege) return 1;  // NCAAB matches second!
+    } else if (cardData.id === 'cfb') {
+      const aIsDirectCfb = (a.title || '').toLowerCase().includes('cfb') || (a.rawCategory || '').toLowerCase() === 'cfb';
+      const bIsDirectCfb = (b.title || '').toLowerCase().includes('cfb') || (b.rawCategory || '').toLowerCase() === 'cfb';
+      if (aIsDirectCfb && !bIsDirectCfb) return -1; // CFB matches first!
+      if (!aIsDirectCfb && bIsDirectCfb) return 1;  // NCAA matches second!
+    }
+
     const aLive = a.isLive || (a.date <= now && a.date >= minTime);
     const bLive = b.isLive || (b.date <= now && b.date >= minTime);
     if (aLive && !bLive) return -1;
@@ -1234,15 +1372,46 @@ function renderCategoryMatches() {
     return a.date - b.date;
   });
 
-  if (sportMatches.length === 0) {
-    elements.emptyState.classList.remove('hidden');
-    return;
-  }
-  elements.emptyState.classList.add('hidden');
-
   const badgeHTML = LEAGUE_BADGES[cardData.badgeType] || LEAGUE_BADGES['DEFAULT'];
+  let shownNbaHeader = false;
+  let shownNcaabHeader = false;
+  let shownCfbHeader = false;
+  let shownNcaaHeader = false;
 
   sportMatches.forEach(match => {
+    // Show clear section headers for NBA / NCAAB and CFB / NCAA so normal users immediately understand
+    if (cardData.id === 'nba' && !query) {
+      const isCollege = match.isCollege || (match.league || '').toLowerCase().includes('ncaa') || (match.rawCategory || '').toLowerCase() === 'ncaab';
+      if (!isCollege && !shownNbaHeader) {
+        shownNbaHeader = true;
+        const heading = document.createElement('div');
+        heading.className = 'match-group-heading';
+        heading.innerHTML = '<span>🏀</span><span>NBA Games</span>';
+        elements.categoryMatchesList.appendChild(heading);
+      } else if (isCollege && !shownNcaabHeader) {
+        shownNcaabHeader = true;
+        const heading = document.createElement('div');
+        heading.className = 'match-group-heading';
+        heading.innerHTML = '<span>🎓</span><span>NCAAB (NCAA College Basketball) Matches</span>';
+        elements.categoryMatchesList.appendChild(heading);
+      }
+    } else if (cardData.id === 'cfb' && !query) {
+      const isDirectCfb = (match.title || '').toLowerCase().includes('cfb') || (match.rawCategory || '').toLowerCase() === 'cfb';
+      if (isDirectCfb && !shownCfbHeader) {
+        shownCfbHeader = true;
+        const heading = document.createElement('div');
+        heading.className = 'match-group-heading';
+        heading.innerHTML = '<span>🏈</span><span>CFB (College Football) Matches</span>';
+        elements.categoryMatchesList.appendChild(heading);
+      } else if (!isDirectCfb && !shownNcaaHeader) {
+        shownNcaaHeader = true;
+        const heading = document.createElement('div');
+        heading.className = 'match-group-heading';
+        heading.innerHTML = '<span>🏆</span><span>NCAA Football Showdowns</span>';
+        elements.categoryMatchesList.appendChild(heading);
+      }
+    }
+
     const isLive = match.isLive || (match.date <= now && match.date >= minTime);
     let timeStr = '';
     if (isLive) {
@@ -1272,23 +1441,31 @@ function renderCategoryMatches() {
       `;
     }
 
+    // Dynamic badge and tag determination
+    let matchBadge = badgeHTML;
+    let matchTagText = cardData.title;
+    let tagExtraClass = '';
+
+    if (cardData.id === 'nba') {
+      const isCollege = match.isCollege || (match.league || '').toLowerCase().includes('ncaa') || (match.rawCategory || '').toLowerCase() === 'ncaab';
+      if (isCollege) {
+        matchBadge = LEAGUE_BADGES['NCAAB'] || badgeHTML;
+        matchTagText = 'NCAAB';
+        tagExtraClass = 'match-league-tag--college';
+      } else {
+        matchBadge = LEAGUE_BADGES['NBA'];
+        matchTagText = 'NBA';
+      }
+    } else if (cardData.id === 'cfb') {
+      const isDirectCfb = (match.title || '').toLowerCase().includes('cfb') || (match.rawCategory || '').toLowerCase() === 'cfb';
+      matchTagText = isDirectCfb ? 'CFB' : 'NCAA';
+      tagExtraClass = 'match-league-tag--college';
+    }
+
     // Determine sources for this match
     const matchSources = (match.sources && match.sources.length > 0)
       ? match.sources
       : [{ source: 'admin', id: match.id }];
-
-    let sourceChipsData = [];
-    if (matchSources.length === 1) {
-      sourceChipsData = [
-        { label: `Source 1: ${matchSources[0].source.toUpperCase()} (HD 1080p)`, index: 0 },
-        { label: `Source 2: ${matchSources[0].source.toUpperCase()} (Backup HD)`, index: 0 }
-      ];
-    } else {
-      sourceChipsData = matchSources.map((s, idx) => ({
-        label: `Source ${idx + 1}: ${s.source.toUpperCase()} (HD)`,
-        index: idx
-      }));
-    }
 
     const card = document.createElement('div');
     card.className = 'match-item-card';
@@ -1297,12 +1474,12 @@ function renderCategoryMatches() {
       <div class="match-card-main-row">
         <div class="match-item-left">
           <div class="match-league-thumb">
-            ${badgeHTML}
+            ${matchBadge}
           </div>
           <div class="match-info-block">
             <h3 class="match-title-h3">${match.title}</h3>
             <div class="match-meta-row">
-              <span class="match-league-tag">${cardData.title}</span>
+              <span class="match-league-tag ${tagExtraClass}">${matchTagText}</span>
               <span>•</span>
               ${statusHTML}
             </div>

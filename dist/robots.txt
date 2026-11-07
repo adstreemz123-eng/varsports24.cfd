@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://indexlead.cfd/sitemap.xml
+Sitemap: https://treetun.cfd/sitemap.xml
