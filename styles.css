@@ -250,41 +250,51 @@ html.player-active #desktop-category-nav {
   align-items: center;
   gap: 8px;
   padding: 6px 14px;
-  background: rgba(239, 68, 68, 0.12);
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgba(18, 22, 34, 0.88);
+  border: 1px solid rgba(239, 68, 68, 0.35);
   border-radius: var(--radius-full);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.header-live-badge:hover {
+  border-color: rgba(239, 68, 68, 0.65);
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
 }
 
 .live-pulse-radar {
   position: relative;
   width: 10px;
   height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pulse-core {
   position: absolute;
-  top: 1px;
-  left: 1px;
-  width: 8px;
-  height: 8px;
-  background: var(--brand-red);
+  width: 7px;
+  height: 7px;
+  background: #ef4444;
   border-radius: 50%;
+  box-shadow: 0 0 8px #ef4444;
 }
 
 .pulse-ring {
   position: absolute;
-  top: -2px;
-  left: -2px;
-  width: 14px;
-  height: 14px;
-  border: 2px solid var(--brand-red);
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid rgba(239, 68, 68, 0.7);
   border-radius: 50%;
-  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
 @keyframes ping {
   75%, 100% {
-    transform: scale(2);
+    transform: scale(2.2);
     opacity: 0;
   }
 }
@@ -292,8 +302,8 @@ html.player-active #desktop-category-nav {
 .header-live-text {
   font-size: 11px;
   font-weight: 800;
-  color: #ff6b6b;
-  letter-spacing: 0.8px;
+  color: #ffffff;
+  letter-spacing: 0.9px;
   text-transform: uppercase;
 }
 
@@ -454,18 +464,35 @@ html.player-active #desktop-category-nav {
 }
 
 /* ==========================================================================
-   STREAMKING HERO SECTION
+   STREAMKING HERO SECTION (Eye-Friendly Premium Sports Command Center)
    ========================================================================== */
 .streamking-hero-card {
   margin-top: 24px;
-  padding: 28px 24px;
-  background: linear-gradient(145deg, #161c2c 0%, #101420 100%);
-  border: 1px solid var(--border-card);
+  padding: 30px 28px;
+  background: linear-gradient(135deg, #111624 0%, #090c14 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-left: 4px solid var(--brand-red);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   position: relative;
   overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.streamking-hero-card:hover {
+  border-color: rgba(255, 255, 255, 0.13);
+  box-shadow: 0 14px 38px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.streamking-hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(216, 31, 38, 0.7) 0%, rgba(56, 189, 248, 0.15) 35%, transparent 75%);
+  pointer-events: none;
 }
 
 .streamking-hero-card::after {
@@ -473,32 +500,38 @@ html.player-active #desktop-category-nav {
   position: absolute;
   top: 0;
   right: 0;
-  width: 200px;
+  width: 260px;
   height: 100%;
-  background: radial-gradient(circle at top right, rgba(216, 31, 38, 0.15), transparent 70%);
+  background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.08) 0%, rgba(99, 102, 241, 0.04) 45%, transparent 80%);
   pointer-events: none;
 }
 
 .hero-title {
   font-size: 24px;
   font-weight: 800;
-  color: var(--text-white);
-  line-height: 1.3;
-  margin-bottom: 8px;
-  letter-spacing: -0.5px;
+  color: #ffffff;
+  line-height: 1.35;
+  margin-bottom: 12px;
+  letter-spacing: -0.4px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+  position: relative;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
   .hero-title {
     font-size: 28px;
+    letter-spacing: -0.6px;
   }
 }
 
 .hero-desc {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.6;
-  max-width: 800px;
+  font-size: 14.5px;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.7;
+  max-width: 900px;
+  position: relative;
+  z-index: 2;
 }
 
 /* ==========================================================================
@@ -659,6 +692,144 @@ html.player-active #desktop-category-nav {
   font-size: 14px;
   color: var(--text-muted);
   margin-top: 4px;
+}
+
+/* ==========================================================================
+   HOMEPAGE LIVE MATCH & SPORTS GLOBAL SEARCH
+   ========================================================================== */
+.homepage-search-wrapper {
+  margin: 22px 0 28px 0;
+  width: 100%;
+}
+
+.homepage-search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.homepage-search-box:hover {
+  border-color: rgba(216, 31, 38, 0.45);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45), 0 0 16px rgba(216, 31, 38, 0.15);
+}
+
+.homepage-search-box:focus-within {
+  border-color: var(--brand-red);
+  background: var(--bg-card-hover);
+  box-shadow: 0 0 0 3px var(--brand-red-subtle), 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.homepage-search-icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 16px;
+  color: var(--text-dim);
+  transition: color 0.2s ease;
+}
+
+.homepage-search-box:focus-within .homepage-search-icon-box {
+  color: var(--brand-red);
+}
+
+.homepage-search-input {
+  flex: 1;
+  width: 100%;
+  height: 50px;
+  padding: 0 16px 0 12px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-white);
+  font-family: var(--font-main);
+  font-size: 14.5px;
+  font-weight: 500;
+}
+
+.homepage-search-input::placeholder {
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.homepage-search-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 50%;
+  color: var(--text-muted);
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.homepage-search-clear:hover {
+  background: var(--brand-red);
+  color: #ffffff;
+}
+
+/* SEARCH RESULTS CONTAINER */
+.homepage-search-results {
+  margin-top: 18px;
+  background: rgba(15, 19, 28, 0.95);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.homepage-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  flex-wrap: wrap;
+}
+
+.homepage-results-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.homepage-results-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.homepage-results-tip {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.homepage-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.homepage-empty-results {
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 13.5px;
 }
 
 /* 3-Column Grid on Desktop matching Screenshot */
@@ -2374,7 +2545,7 @@ html:not(.category-active):not(.player-active) .mobile-sticky-ad-bar {
   }
 }
 
-/* Match Page Mobile 300x250 Ad (User Requested: PC/Mob dono py 250*300 ad) */
+/* Match Page Mobile 300x250 Ad (Highest Earning Mobile Ad Unit) */
 .match-page-mobile-ad-300x250 {
   display: none !important;
 }
@@ -2382,11 +2553,28 @@ html:not(.category-active):not(.player-active) .mobile-sticky-ad-bar {
 @media (max-width: 1199px) {
   html.category-active .match-page-mobile-ad-300x250 {
     display: flex !important;
-    justify-content: center;
-    align-items: center;
-    margin: 16px auto 20px auto;
-    width: 300px;
-    height: 250px;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 16px auto 20px auto !important;
+    width: 100% !important;
+    max-width: 300px !important;
+    min-height: 250px !important;
+    height: 250px !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  html.category-active .match-page-mobile-ad-300x250 iframe {
+    width: 300px !important;
+    height: 250px !important;
+    min-width: 300px !important;
+    min-height: 250px !important;
+    border: 0 !important;
+    outline: none !important;
+    background: transparent !important;
+    display: block !important;
+    margin: 0 auto !important;
+    flex-shrink: 0 !important;
   }
 }
 

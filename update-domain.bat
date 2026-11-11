@@ -1,4 +1,4 @@
-@echo off
+ @echo off
 title MethStreams 1-Click Domain Updater
 color 0b
 cls

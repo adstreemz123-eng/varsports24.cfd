@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://treetun.cfd/sitemap.xml
+Sitemap: https://methstream.blog/sitemap.xml

@@ -120,10 +120,70 @@ Sitemap: ${newDomain}/sitemap.xml
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <url>
+    <loc>${newDomain}/hesgoal/</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${newDomain}/league/nflstreams/</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${newDomain}/league/nbastreams/</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${newDomain}/league/soccerstreams/</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${newDomain}/league/ufcstreams/</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${newDomain}/league/cfbstreams/</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${newDomain}/league/nhlstreams/</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${newDomain}/league/mlbstreams/</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${newDomain}/league/f1streams/</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>${newDomain}/league/wwestreams/</loc>
+    <lastmod>${todayDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
 `;
   fs.writeFileSync(sitemapPath, sitemapContent, 'utf8');
-  console.log('  [3/6] ✅ sitemap.xml updated (clean canonical only)!');
+  console.log('  [3/6] ✅ sitemap.xml updated (Home + HesGoal + 9 League pages)!');
 
   // 3b. UPDATE methstreams-watch/index.html
   const watchIndexPath = path.join(__dirname, 'methstreams-watch', 'index.html');
@@ -135,6 +195,27 @@ Sitemap: ${newDomain}/sitemap.xml
     fs.writeFileSync(watchIndexPath, watchHtml, 'utf8');
     console.log('  [+] ✅ methstreams-watch/index.html redirects updated!');
   }
+
+  // 3c. UPDATE subpages (hesgoal & all 9 league pages)
+  const subpageFiles = [
+    path.join(__dirname, 'hesgoal', 'index.html'),
+    ...['nflstreams', 'nbastreams', 'soccerstreams', 'ufcstreams', 'cfbstreams', 'nhlstreams', 'mlbstreams', 'f1streams', 'wwestreams'].map(s => path.join(__dirname, 'league', s, 'index.html'))
+  ];
+
+  subpageFiles.forEach(subFile => {
+    if (fs.existsSync(subFile)) {
+      let subHtml = fs.readFileSync(subFile, 'utf8');
+      const oldHost = (config.domain || '').replace(/^https?:\/\//i, '').replace(/\/+$/, '');
+      if (oldHost && oldHost !== newHost) {
+        const oldHostRegex = new RegExp(oldHost.replace(/\./g, '\\.'), 'gi');
+        subHtml = subHtml.replace(oldHostRegex, newHost);
+      }
+      subHtml = subHtml.replace(/<meta property="article:modified_time" content="[^"]*"/i, `<meta property="article:modified_time" content="${todayDate}T00:00:00+00:00"`);
+      subHtml = subHtml.replace(/<meta property="og:updated_time" content="[^"]*"/i, `<meta property="og:updated_time" content="${todayDate}T00:00:00+00:00"`);
+      fs.writeFileSync(subFile, subHtml, 'utf8');
+    }
+  });
+  console.log('  [+] ✅ Subpages (hesgoal & 9 league pages) updated with new domain!');
 
   // 4. UPDATE sitemap.xsl
   if (fs.existsSync(sitemapXslPath)) {

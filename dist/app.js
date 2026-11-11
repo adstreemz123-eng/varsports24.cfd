@@ -117,8 +117,8 @@ const CATEGORY_CARDS = [
     id: 'nfl',
     targetSport: 'american-football',
     title: 'NFL',
-    subtitle: 'LIVE NFL BROADCAST | GRIDIRON PASS, GAME PASS & TOUCHDOWN REDZONE',
-    description: 'Follow high-octane NFL broadcast games on MethStreams in razor-sharp 1080p. Watch Sunday afternoon football, primetime showdowns, and live RedZone scores without cable fees...',
+    subtitle: 'FREE NFL BROADCAST | SUNDAY GAME PASS, REDZONE & PRIMETIME MATCHUPS',
+    description: 'Catch live NFL broadcast coverage on MethStreams with crystal clarity. Stream Sunday afternoon kickoffs, Thursday night thrillers, and live RedZone scores in full 1080p HD...',
     badgeType: 'NFL',
     icon: '🏈'
   },
@@ -126,8 +126,8 @@ const CATEGORY_CARDS = [
     id: 'soccer',
     targetSport: 'football',
     title: 'Soccer',
-    subtitle: 'GLOBAL SOCCER STREAMS | PREMIER LEAGUE, CHAMPIONS LEAGUE & DERBIES',
-    description: 'Access uninterrupted live soccer streams on MethStreams for every major league. Follow UEFA Champions League thrillers, Premier League derbies, and top domestic cups with zero lag...',
+    subtitle: 'LIVE SOCCER STREAMS | PREMIER LEAGUE, UEFA CHAMPIONS LEAGUE & WORLD DERBIES',
+    description: 'Enjoy fluid live soccer streams and free football broadcasts on MethStreams. Follow UEFA Champions League nights, top European leagues, and continental cup clashes without lag...',
     badgeType: 'SOCCER',
     icon: '⚽'
   },
@@ -135,8 +135,8 @@ const CATEGORY_CARDS = [
     id: 'nba',
     targetSport: 'basketball',
     title: 'NBA / NCAAB',
-    subtitle: 'LIVE NBA & NCAAB BASKETBALL | PRO HOOPS & MARCH MADNESS DRAMA',
-    description: 'Experience fast-paced NBA matchups and NCAA college basketball on MethStreams. Stream high-flying court duels, buzzer-beaters, and postseason brackets with smooth 60 FPS motion...',
+    subtitle: 'PRO NBA & NCAAB BASKETBALL | COURT SHOWDOWNS & MARCH MADNESS RUNS',
+    description: 'Stream high-speed NBA matchups and NCAA basketball showdowns on MethStreams. Experience slam dunks, buzzer-beaters, and college tournament action with smooth 60 FPS motion...',
     badgeType: 'NBA',
     icon: '🏀'
   },
@@ -144,8 +144,8 @@ const CATEGORY_CARDS = [
     id: 'cfb',
     targetSport: 'american-football',
     title: 'CFB / NCAA',
-    subtitle: 'COLLEGE FOOTBALL BROADCAST | NCAA GAME DAY & SATURDAY BOWL GAMES',
-    description: 'Stream electrifying NCAA college football action on MethStreams. Catch conference rivalries, Saturday game-day telecasts, and national championship playoff chases with crystal audio...',
+    subtitle: 'NCAA COLLEGE FOOTBALL LIVE | SATURDAY RIVALRIES & NATIONAL BOWL GAMES',
+    description: 'Follow electrifying NCAA college football games on MethStreams. Watch regular conference rivalries, Saturday game day clashes, and national championship playoff runs with clear sound...',
     badgeType: 'CFB',
     icon: '🏈'
   },
@@ -153,8 +153,8 @@ const CATEGORY_CARDS = [
     id: 'mma-boxing',
     targetSport: 'fight',
     title: 'UFC / Boxing',
-    subtitle: 'METHSTREAMS UFC & FIGHT NIGHTS | PPV MAIN CARDS & CHAMPIONSHIP FIGHTS',
-    description: 'Tune into methstreams ufc fight cards and world title boxing events on MethStreams. Watch undercard wars and Pay-Per-View championship bouts without blackout restrictions...',
+    subtitle: 'METHSTREAMS UFC & FIGHT NIGHTS | PPV TITLE FIGHTS & CHAMPIONSHIP CARDS',
+    description: 'Watch methstreams ufc fight cards and world championship boxing events on MethStreams. Stream early prelims, main cards, and Pay-Per-View title showdowns free from blackout gates...',
     badgeType: 'UFC-BOXING',
     icon: '🥊'
   },
@@ -162,8 +162,8 @@ const CATEGORY_CARDS = [
     id: 'nhl',
     targetSport: 'hockey',
     title: 'NHL',
-    subtitle: 'NHL HOCKEY BROADCAST | POWER PLAYS, PUCK DROPS & STANLEY CUP PURSUIT',
-    description: 'Watch rapid-fire NHL hockey action on MethStreams in vivid high definition. Stream sudden-death overtime battles, breakaways, and postseason trophy runs with uninterrupted feeds...',
+    subtitle: 'NHL HOCKEY BROADCAST | FAST-PACED POWER PLAYS & STANLEY CUP PURSUIT',
+    description: 'Stream intense NHL hockey showdowns on MethStreams in sharp high definition. Enjoy sudden-death overtime battles, coast-to-coast goals, and playoff hockey without interruptions...',
     badgeType: 'NHL',
     icon: '🏒'
   },
@@ -171,8 +171,8 @@ const CATEGORY_CARDS = [
     id: 'mlb',
     targetSport: 'baseball',
     title: 'MLB',
-    subtitle: 'MLB BASEBALL FEEDS | REGULAR PENNANT RACES & OCTOBER WORLD SERIES',
-    description: 'Enjoy live Major League Baseball broadcasts on MethStreams all season long. Stream pitching duels, walk-off home runs, and the Fall Classic World Series with dependable video...',
+    subtitle: 'MLB BASEBALL LIVE | REGULAR PENNANT RACES & FALL CLASSIC WORLD SERIES',
+    description: 'Tune into Major League Baseball action on MethStreams throughout the season. Follow bases-loaded jams, walk-off home runs, and the October World Series with rock-solid streaming...',
     badgeType: 'MLB',
     icon: '⚾'
   },
@@ -180,8 +180,8 @@ const CATEGORY_CARDS = [
     id: 'f1',
     targetSport: 'motor-sports',
     title: 'F1',
-    subtitle: 'FORMULA 1 MOTORSPORTS | GRAND PRIX CIRCUITS & RACE DAY POLE POSITION',
-    description: 'Catch high-speed Formula 1 Grand Prix racing weekends on MethStreams. Watch live practice laps, qualifying grid battles, and lights-out Sunday race days in pristine 1080p HD...',
+    subtitle: 'FORMULA 1 MOTORSPORTS | GRAND PRIX CIRCUITS & RACE DAY PODIUM DRAMA',
+    description: 'Experience high-octane Formula 1 Grand Prix weekends on MethStreams. Stream practice sessions, pole position shootouts, and lights-out Sunday race days in pristine 1080p...',
     badgeType: 'F1',
     icon: '🏎️'
   },
@@ -189,8 +189,8 @@ const CATEGORY_CARDS = [
     id: 'wwe',
     targetSport: 'fight',
     title: 'WWE',
-    subtitle: 'WWE PRO WRESTLING | MONDAY NIGHT RAW, SMACKDOWN & MAJOR PLE EVENTS',
-    description: 'Stream dynamic professional wrestling spectacles on MethStreams completely free. Watch weekly telecasts of WWE Raw and SmackDown alongside mega-stadium Premium Live Events...',
+    subtitle: 'WWE ENTERTAINMENT | MONDAY RAW, FRIDAY SMACKDOWN & MAJOR STADIUM PLES',
+    description: 'Watch electrifying pro wrestling spectacles on MethStreams without fees. Follow weekly episodes of WWE Raw and SmackDown alongside blockbuster Premium Live Events all year round...',
     badgeType: 'WWE',
     icon: '🤼'
   }
@@ -732,7 +732,13 @@ const elements = new Proxy({}, {
       drawerSportsList: 'drawer-sports-list',
       drawerAllCategoriesBtn: 'drawer-all-categories-btn',
       brandHomeLink: 'brand-home-link',
-      desktopNav: 'desktop-category-nav'
+      desktopNav: 'desktop-category-nav',
+      homepageSearchContainer: 'homepage-search-container',
+      homepageSearchInput: 'homepage-search-input',
+      homepageSearchClearBtn: 'homepage-search-clear-btn',
+      homepageSearchResults: 'homepage-search-results',
+      homepageResultsCount: 'homepage-results-count',
+      homepageResultsList: 'homepage-results-list'
     };
     const id = idMap[prop] || prop;
     return document.getElementById(id);
@@ -1249,6 +1255,11 @@ function showCategoryMatchesView(catId) {
   if (elements.desktopNav) elements.desktopNav.classList.remove('hidden');
 
   // Activate Match Page Ads: Popunder on match click + Native Banner 4:1 widget + Social Bar
+  const bannerCard = document.getElementById('shared-native-banner-card');
+  const catSlot = document.getElementById('category-native-banner-slot');
+  if (bannerCard && catSlot && !catSlot.contains(bannerCard)) {
+    catSlot.appendChild(bannerCard);
+  }
   AdController.initPopunder();
   AdController.initNativeBanner();
   AdController.initSocialBar();
@@ -1506,6 +1517,10 @@ function renderCategoryMatches() {
 }
 
 function showAllCategoriesView(updateUrl = true) {
+  if (window.IS_SUBPAGE) {
+    window.location.href = '/';
+    return;
+  }
   state.currentCategoryCard = null;
   state.activeMatch = null;
   sessionStorage.setItem('activeView', 'home');
@@ -1535,6 +1550,182 @@ function showAllCategoriesView(updateUrl = true) {
   });
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ============================================================================
+// HOMEPAGE GLOBAL LIVE MATCH & SPORTS SEARCH
+// ============================================================================
+function escapeHtml(str) {
+  if (!str) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function handleHomepageSearch(rawQuery) {
+  const query = (rawQuery || '').toLowerCase().trim();
+  const clearBtn = elements.homepageSearchClearBtn;
+  const resultsContainer = elements.homepageSearchResults;
+  const resultsList = elements.homepageResultsList;
+  const resultsCount = elements.homepageResultsCount;
+
+  if (clearBtn) {
+    clearBtn.classList.toggle('hidden', !query);
+  }
+
+  // If query is empty, reset view back to standard grid
+  if (!query) {
+    if (resultsContainer) resultsContainer.classList.add('hidden');
+    if (resultsList) resultsList.innerHTML = '';
+    document.querySelectorAll('.sport-box-card').forEach(card => card.classList.remove('hidden'));
+    return;
+  }
+
+  // Collect all unique matches from state.matches and featured fixtures
+  const seenIds = new Set();
+  const allPool = [];
+
+  // Live state matches
+  (state.matches || []).forEach(m => {
+    if (m && m.id && !seenIds.has(String(m.id))) {
+      seenIds.add(String(m.id));
+      allPool.push(m);
+    }
+  });
+
+  // Featured fixtures
+  if (typeof FEATURED_CATEGORY_FIXTURES === 'object' && FEATURED_CATEGORY_FIXTURES !== null) {
+    Object.values(FEATURED_CATEGORY_FIXTURES).forEach(list => {
+      if (Array.isArray(list)) {
+        list.forEach(m => {
+          if (m && m.id && !seenIds.has(String(m.id))) {
+            seenIds.add(String(m.id));
+            allPool.push(m);
+          }
+        });
+      }
+    });
+  }
+
+  // Filter pool by query
+  const matchedMatches = allPool.filter(m => {
+    const title = (m.title || '').toLowerCase();
+    const teams = `${m.teams?.home?.name || ''} ${m.teams?.away?.name || ''}`.toLowerCase();
+    const league = (m.league || '').toLowerCase();
+    const cat = (m.category || m.rawCategory || '').toLowerCase();
+    return title.includes(query) || teams.includes(query) || league.includes(query) || cat.includes(query);
+  });
+
+  // Filter sports cards grid if query matches sport category name
+  document.querySelectorAll('.sport-box-card').forEach(card => {
+    const catId = (card.getAttribute('data-category-id') || '').toLowerCase();
+    const text = (card.textContent || '').toLowerCase();
+    const matchesCat = catId.includes(query) || text.includes(query);
+    if (matchedMatches.length > 0) {
+      card.classList.toggle('hidden', !matchesCat && query.length > 2);
+    } else {
+      card.classList.toggle('hidden', !matchesCat);
+    }
+  });
+
+  if (!resultsContainer || !resultsList) return;
+
+  resultsContainer.classList.remove('hidden');
+  resultsList.innerHTML = '';
+
+  const now = Date.now();
+  const minTime = now - (3.5 * 60 * 60 * 1000);
+
+  // Sort matched matches: Live first, then by date
+  matchedMatches.sort((a, b) => {
+    const aLive = a.isLive || (a.date <= now && a.date >= minTime);
+    const bLive = b.isLive || (b.date <= now && b.date >= minTime);
+    if (aLive && !bLive) return -1;
+    if (!aLive && bLive) return 1;
+    return (a.date || 0) - (b.date || 0);
+  });
+
+  if (matchedMatches.length === 0) {
+    if (resultsCount) resultsCount.textContent = `0 Matches Found for "${rawQuery}"`;
+    resultsList.innerHTML = `
+      <div class="homepage-empty-results">
+        <p>No live or upcoming matches found matching <strong>"${escapeHtml(rawQuery)}"</strong>.</p>
+        <p style="margin-top: 6px; font-size: 12.5px; color: var(--text-dim);">Try searching another team name, league, or choose a sport category below.</p>
+      </div>
+    `;
+    return;
+  }
+
+  // Cap at 15 matches for speed
+  const displayMatches = matchedMatches.slice(0, 15);
+  if (resultsCount) {
+    resultsCount.textContent = `${matchedMatches.length} Match${matchedMatches.length === 1 ? '' : 'es'} Found for "${rawQuery}"`;
+  }
+
+  displayMatches.forEach(match => {
+    const isLive = match.isLive || (match.date <= now && match.date >= minTime);
+    let timeStr = '';
+    if (isLive) {
+      timeStr = 'LIVE NOW';
+    } else if (match.date && match.date > 0) {
+      const matchDate = new Date(match.date);
+      const isToday = matchDate.toDateString() === new Date().toDateString();
+      timeStr = (isToday ? 'Today, ' : matchDate.toLocaleDateString([], { month: 'short', day: 'numeric' }) + ', ') +
+                matchDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    } else {
+      timeStr = match.countdown || 'Upcoming';
+    }
+
+    let catUpper = (match.category || match.rawCategory || 'SPORTS').toUpperCase();
+    let badgeSvg = LEAGUE_BADGES[catUpper] || LEAGUE_BADGES['DEFAULT'] || '';
+
+    const card = document.createElement('div');
+    card.className = 'match-item-card';
+    card.setAttribute('data-id', match.id);
+    card.innerHTML = `
+      <div class="match-card-main-row">
+        <div class="match-item-left">
+          <div class="match-league-thumb">
+            ${badgeSvg}
+          </div>
+          <div class="match-info-block">
+            <h3 class="match-title-h3">${escapeHtml(match.title || '')}</h3>
+            <div class="match-meta-row">
+              <span class="match-league-tag">${escapeHtml(catUpper)}</span>
+              <span>•</span>
+              ${isLive ? `
+                <span class="match-status-pill live">
+                  <span class="sport-box-live-dot"></span>
+                  LIVE NOW
+                </span>
+              ` : `
+                <span class="match-status-pill upcoming">
+                  🕒 ${escapeHtml(timeStr || 'Upcoming')}
+                </span>
+              `}
+            </div>
+          </div>
+        </div>
+        <div class="match-item-right">
+          <button class="btn-watch-stream" data-id="${match.id}" type="button">
+            <span>Watch Stream</span>
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    `;
+
+    card.addEventListener('click', () => {
+      openMatchInPlayer(match, true, 0);
+    });
+
+    resultsList.appendChild(card);
+  });
 }
 
 // ============================================================================
@@ -1591,6 +1782,11 @@ async function openMatchInPlayer(match, updateHash = true, initialSourceIndex = 
   if (elements.desktopNav) elements.desktopNav.classList.add('hidden');
 
   // Activate Player Page Ads: Popunder on click-to-play + Native Banner (No Social Bar)
+  const playerBannerCard = document.getElementById('shared-native-banner-card');
+  const playerSlot = document.getElementById('player-native-banner-slot');
+  if (playerBannerCard && playerSlot && !playerSlot.contains(playerBannerCard)) {
+    playerSlot.appendChild(playerBannerCard);
+  }
   AdController.initPopunder();
   AdController.initNativeBanner();
 
@@ -1787,7 +1983,13 @@ function handleHashRouting() {
     return;
   }
 
-  // 5. Default to Home Grid only when explicitly at home
+  // 5. Default Category for subpages (e.g. /league/nflstreams or /hesgoal)
+  if (window.DEFAULT_CATEGORY && CATEGORY_MAP[window.DEFAULT_CATEGORY]) {
+    showCategoryMatchesView(window.DEFAULT_CATEGORY);
+    return;
+  }
+
+  // 6. Default to Home Grid only when explicitly at home
   document.documentElement.classList.remove('subpage-active', 'category-active', 'player-active');
   showAllCategoriesView(false);
 }
@@ -1929,6 +2131,21 @@ function setupEventListeners() {
     elements.drawerAllCategoriesBtn.addEventListener('click', () => {
       closeMobileDrawer();
       showAllCategoriesView(true);
+    });
+  }
+
+  // Homepage Global Search Input (Live instant match & sports search)
+  if (elements.homepageSearchInput) {
+    elements.homepageSearchInput.addEventListener('input', (e) => {
+      handleHomepageSearch(e.target.value);
+    });
+  }
+  if (elements.homepageSearchClearBtn) {
+    elements.homepageSearchClearBtn.addEventListener('click', () => {
+      if (elements.homepageSearchInput) {
+        elements.homepageSearchInput.value = '';
+      }
+      handleHomepageSearch('');
     });
   }
 
