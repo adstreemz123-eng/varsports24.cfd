@@ -18,10 +18,10 @@ const SITE_CONFIG = {
   discordUrl: "https://discord.gg/gmKmhVKF4G",
 
   // 4. Site Title (Browser Tab & Google Search Title - Max 60 chars for SEO)
-  title: "Varsports24 - Live Sports Streams, NFL, NBA & MethStreams HD",
+  title: "MethStreams - Live NFL Broadcast & CrackStreams HD Sports",
 
   // 5. Meta Description (Google Search Snippet - Max 160 chars)
-  description: "Watch free live sports on Varsports24 & MethStreams. Fast, buffer-free NFL broadcast feeds, NBA games, UFC fight nights & soccer streams in 1080p HD.",
+  description: "Watch free live NFL broadcast feeds on MethStreams, the premier CrackStreams alternative. Stream NBA, UFC & sports in crystal-clear 1080p HD with zero lag.",
 
   // 6. Social Share Image (OG Image)
   ogImage: "https://varsports24.cfd/methstreams.png",
