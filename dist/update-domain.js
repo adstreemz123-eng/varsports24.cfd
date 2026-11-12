@@ -82,7 +82,7 @@ async function run() {
   console.log('--------------------------------------------------------');
 
   const siteName = config.siteName || 'MethStreams';
-  const newOgImage = `${newDomain}/MethStreams-NFL-broadcast-map.png`;
+  const newOgImage = `${newDomain}/methstreams.png`;
   const todayDate = new Date().toISOString().split('T')[0];
 
   // 1. UPDATE config.js

@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://methstream.blog/sitemap.xml
+Sitemap: https://methstreams1.online/sitemap.xml
