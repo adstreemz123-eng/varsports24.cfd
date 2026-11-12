@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap Location
-Sitemap: https://methstreams1.online/sitemap.xml
+Sitemap: https://varsports24.cfd/sitemap.xml
